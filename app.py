@@ -20,10 +20,6 @@ STAGE2_CLASSES = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "u"]
 CROP_IMGSZ = 416
 CROP_PAD = 0.12
 
-# ---------------------------------------------------------------------------
-# Theme tokens -- lifted directly from the Mbarira AI Tailwind mockup so the
-# deployed app matches the original design exactly.
-# ---------------------------------------------------------------------------
 COLORS = {
     "primary": "#00543b",
     "primary_container": "#0b6e4f",
@@ -50,10 +46,22 @@ BASE_CSS = f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600&family=Sora:wght@700&display=swap');
 
-html, body, [class*="css"] {{
-    font-family: 'Inter', sans-serif;
-    background-color: {COLORS["background"]};
-    color: {COLORS["on_surface"]};
+:root {{
+    color-scheme: light !important;
+}}
+html, body,
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+[data-testid="stHeader"],
+[data-testid="stToolbar"],
+[class*="css"] {{
+    font-family: 'Inter', sans-serif !important;
+    background-color: {COLORS["background"]} !important;
+    color: {COLORS["on_surface"]} !important;
+}}
+[data-testid="stHeader"] {{
+    background-color: transparent !important;
 }}
 
 .block-container {{
@@ -61,7 +69,7 @@ html, body, [class*="css"] {{
     max-width: 1280px;
 }}
 
-#MainMenu, footer, header {{visibility: hidden;}}
+#MainMenu, footer {{visibility: hidden;}}
 
 .mb-navbar {{
     display: flex;
@@ -75,16 +83,16 @@ html, body, [class*="css"] {{
     font-family: 'Sora', sans-serif;
     font-weight: 700;
     font-size: 22px;
-    color: {COLORS["on_surface"]};
+    color: {COLORS["on_surface"]} !important;
 }}
 .mb-navbar .links a {{
-    color: {COLORS["on_surface_variant"]};
+    color: {COLORS["on_surface_variant"]} !important;
     text-decoration: none;
     margin-left: 24px;
     font-size: 15px;
 }}
 .mb-navbar .links a.active {{
-    color: {COLORS["primary"]};
+    color: {COLORS["primary"]} !important;
     font-weight: 700;
     border-bottom: 2px solid {COLORS["primary"]};
     padding-bottom: 4px;
@@ -95,23 +103,24 @@ html, body, [class*="css"] {{
     font-size: 40px;
     line-height: 1.15;
     margin-bottom: 4px;
-    color: {COLORS["on_surface"]};
+    color: {COLORS["on_surface"]} !important;
 }}
 .mb-header p {{
     font-size: 17px;
-    color: {COLORS["on_surface_variant"]};
+    color: {COLORS["on_surface_variant"]} !important;
     max-width: 640px;
 }}
 
-.mb-card {{
-    background: {COLORS["surface_container_lowest"]};
-    border: 1px solid {COLORS["outline_variant"]};
-    border-radius: 12px;
-    padding: 24px;
+[data-testid="stVerticalBlockBorderWrapper"] {{
+    background: {COLORS["surface_container_lowest"]} !important;
+    border: 1px solid {COLORS["outline_variant"]} !important;
+    border-radius: 12px !important;
     box-shadow: 0 1px 2px rgba(15,23,42,0.03);
-    height: 100%;
 }}
-.mb-card h2 {{
+[data-testid="stVerticalBlockBorderWrapper"] * {{
+    color: {COLORS["on_surface"]};
+}}
+.mb-card-title {{
     font-family: 'Sora', sans-serif;
     font-size: 20px;
     font-weight: 700;
@@ -119,6 +128,7 @@ html, body, [class*="css"] {{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: {COLORS["on_surface"]} !important;
 }}
 
 .mb-badge {{
@@ -144,7 +154,6 @@ html, body, [class*="css"] {{
     50% {{ opacity: 0.3; }}
 }}
 
-/* Restyle the native Streamlit uploader to look like the drop-zone */
 [data-testid="stFileUploaderDropzone"] {{
     background: transparent !important;
     border: 2px dashed {COLORS["outline_variant"]} !important;
@@ -364,8 +373,6 @@ def pil_to_b64(img: Image.Image) -> str:
 
 
 def read_meter(image, stage1_model, stage2_model):
-    """Runs the two-stage pipeline and returns everything the UI needs,
-    including per-stage timings for the workflow timeline."""
     timings = {}
     img = np.array(image.convert("RGB"))[:, :, ::-1].copy()
     h, w = img.shape[:2]
@@ -460,9 +467,6 @@ def read_meter(image, stage1_model, stage2_model):
     }
 
 
-# ---------------------------------------------------------------------------
-# Top nav bar
-# ---------------------------------------------------------------------------
 st.markdown(
     """
     <div class="mb-navbar">
@@ -477,9 +481,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# ---------------------------------------------------------------------------
-# Header
-# ---------------------------------------------------------------------------
 st.markdown(
     """
     <div class="mb-header">
@@ -500,25 +501,22 @@ if "result" not in st.session_state:
 if "uploaded_name" not in st.session_state:
     st.session_state.uploaded_name = None
 
-# ---------------------------------------------------------------------------
-# Bento grid: upload | preview | results
-# ---------------------------------------------------------------------------
 col_upload, col_preview, col_results = st.columns([4, 5, 3], gap="large")
 
 with col_upload:
-    st.markdown('<div class="mb-card"><h2>Upload Meter Image</h2>', unsafe_allow_html=True)
-    uploaded = st.file_uploader(
-        "Drag & drop image here",
-        type=["jpg", "jpeg", "png"],
-        label_visibility="collapsed",
-    )
-    st.caption("Supports JPG, PNG (Max 5MB)")
-    reset = st.button("Analyze another", use_container_width=True)
-    if reset:
-        st.session_state.result = None
-        st.session_state.uploaded_name = None
-        st.rerun()
-    st.markdown("</div>", unsafe_allow_html=True)
+    with st.container(border=True):
+        st.markdown('<div class="mb-card-title">Upload Meter Image</div>', unsafe_allow_html=True)
+        uploaded = st.file_uploader(
+            "Drag & drop image here",
+            type=["jpg", "jpeg", "png"],
+            label_visibility="collapsed",
+        )
+        st.caption("Supports JPG, PNG (Max 5MB)")
+        reset = st.button("Analyze another", use_container_width=True)
+        if reset:
+            st.session_state.result = None
+            st.session_state.uploaded_name = None
+            st.rerun()
 
 if uploaded is not None and uploaded.name != st.session_state.uploaded_name:
     image = Image.open(uploaded)
@@ -529,126 +527,122 @@ if uploaded is not None and uploaded.name != st.session_state.uploaded_name:
 result = st.session_state.result
 
 with col_preview:
-    badge = (
-        '<span class="mb-badge"><span class="dot"></span>PROCESSING</span>'
-        if result is not None
-        else '<span class="mb-badge" style="opacity:0.5;">IDLE</span>'
-    )
-    st.markdown(f'<div class="mb-card"><h2>Image Preview {badge}</h2>', unsafe_allow_html=True)
+    with st.container(border=True):
+        badge = (
+            '<span class="mb-badge"><span class="dot"></span>PROCESSING</span>'
+            if result is not None
+            else '<span class="mb-badge" style="opacity:0.5;">IDLE</span>'
+        )
+        st.markdown(f'<div class="mb-card-title">Image Preview {badge}</div>', unsafe_allow_html=True)
 
-    if result is None:
-        st.markdown(
-            '<div class="mb-preview-frame"><p class="mb-preview-empty">'
-            'Upload a photo to get started. For best results, photograph the digit window '
-            'straight-on, in good lighting, filling as much of the frame as possible.</p></div>',
-            unsafe_allow_html=True,
-        )
-    else:
-        b64_full = pil_to_b64(result["annotated_full"])
-        st.markdown(
-            f'<div class="mb-preview-frame"><img src="data:image/png;base64,{b64_full}"/>'
-            f'<div class="mb-scanline"></div></div>',
-            unsafe_allow_html=True,
-        )
-        if result["annotated_crop"] is not None:
-            st.markdown('<p class="mb-label-caps" style="margin-top:14px;">Cropped digit window</p>', unsafe_allow_html=True)
-            b64_crop = pil_to_b64(result["annotated_crop"])
+        if result is None:
             st.markdown(
-                f'<div class="mb-preview-frame" style="min-height:160px;">'
-                f'<img src="data:image/png;base64,{b64_crop}"/></div>',
-                unsafe_allow_html=True,
-            )
-    st.markdown("</div>", unsafe_allow_html=True)
-
-with col_results:
-    st.markdown('<div class="mb-card"><h2>AI Results</h2>', unsafe_allow_html=True)
-
-    if result is None:
-        st.markdown(
-            '<p style="color:#3f4943;font-size:14px;">Results will appear here once an image is analyzed.</p>',
-            unsafe_allow_html=True,
-        )
-    else:
-        st.markdown('<p class="mb-label-caps">Extracted Reading</p>', unsafe_allow_html=True)
-        if result["reading"] is None:
-            st.markdown(
-                f'<div class="mb-reading-box warn"><span class="value" style="font-size:16px;">'
-                f'{result["message"]}</span></div>',
+                '<div class="mb-preview-frame"><p class="mb-preview-empty">'
+                'Upload a photo to get started. For best results, photograph the digit window '
+                'straight-on, in good lighting, filling as much of the frame as possible.</p></div>',
                 unsafe_allow_html=True,
             )
         else:
-            box_class = "mb-reading-box warn" if result["status"] == "warn" else "mb-reading-box"
+            b64_full = pil_to_b64(result["annotated_full"])
             st.markdown(
-                f'<div class="{box_class}"><span class="value">{result["reading"]}</span></div>'
-                f'<p style="font-size:12px;color:#3f4943;margin-top:6px;">{result["message"]}</p>',
+                f'<div class="mb-preview-frame"><img src="data:image/png;base64,{b64_full}"/>'
+                f'<div class="mb-scanline"></div></div>',
                 unsafe_allow_html=True,
             )
-
-            confs = result.get("confidences", [])
-            if confs:
-                bars = "".join(
-                    f'<div class="bar" style="height:{max(8, c * 100)}%;" title="Digit {i+1}: {c:.1%}"></div>'
-                    for i, c in enumerate(confs)
+            if result["annotated_crop"] is not None:
+                st.markdown('<p class="mb-label-caps" style="margin-top:14px;">Cropped digit window</p>', unsafe_allow_html=True)
+                b64_crop = pil_to_b64(result["annotated_crop"])
+                st.markdown(
+                    f'<div class="mb-preview-frame" style="min-height:160px;">'
+                    f'<img src="data:image/png;base64,{b64_crop}"/></div>',
+                    unsafe_allow_html=True,
                 )
-                avg_conf = sum(confs) / len(confs)
+
+with col_results:
+    with st.container(border=True):
+        st.markdown('<div class="mb-card-title">AI Results</div>', unsafe_allow_html=True)
+
+        if result is None:
+            st.markdown(
+                '<p style="color:#3f4943;font-size:14px;">Results will appear here once an image is analyzed.</p>',
+                unsafe_allow_html=True,
+            )
+        else:
+            st.markdown('<p class="mb-label-caps">Extracted Reading</p>', unsafe_allow_html=True)
+            if result["reading"] is None:
+                st.markdown(
+                    f'<div class="mb-reading-box warn"><span class="value" style="font-size:16px;">'
+                    f'{result["message"]}</span></div>',
+                    unsafe_allow_html=True,
+                )
+            else:
+                box_class = "mb-reading-box warn" if result["status"] == "warn" else "mb-reading-box"
+                st.markdown(
+                    f'<div class="{box_class}"><span class="value">{result["reading"]}</span></div>'
+                    f'<p style="font-size:12px;color:#3f4943;margin-top:6px;">{result["message"]}</p>',
+                    unsafe_allow_html=True,
+                )
+
+                confs = result.get("confidences", [])
+                if confs:
+                    bars = "".join(
+                        f'<div class="bar" style="height:{max(8, c * 100)}%;" title="Digit {i+1}: {c:.1%}"></div>'
+                        for i, c in enumerate(confs)
+                    )
+                    avg_conf = sum(confs) / len(confs)
+                    st.markdown(
+                        f"""
+                        <div class="mb-metric-card" style="margin-top:16px;">
+                            <p class="mb-label-caps" style="margin-bottom:8px;">Confidence Distribution</p>
+                            <div class="mb-confbars">{bars}</div>
+                            <div class="mb-conf-footer"><span>Avg: {avg_conf:.1%}</span></div>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+
+                total_time = sum(result["timings"].values())
                 st.markdown(
                     f"""
-                    <div class="mb-metric-card" style="margin-top:16px;">
-                        <p class="mb-label-caps" style="margin-bottom:8px;">Confidence Distribution</p>
-                        <div class="mb-confbars">{bars}</div>
-                        <div class="mb-conf-footer"><span>Avg: {avg_conf:.1%}</span></div>
+                    <div class="mb-metric-card" style="margin-top:12px;">
+                        <p class="mb-label-caps" style="margin-bottom:4px;">Total Time</p>
+                        <p style="font-family:'JetBrains Mono',monospace;font-size:18px;">{total_time:.2f}s</p>
                     </div>
                     """,
                     unsafe_allow_html=True,
                 )
 
-            total_time = sum(result["timings"].values())
-            st.markdown(
-                f"""
-                <div class="mb-metric-card" style="margin-top:12px;">
-                    <p class="mb-label-caps" style="margin-bottom:4px;">Total Time</p>
-                    <p style="font-family:'JetBrains Mono',monospace;font-size:18px;">{total_time:.2f}s</p>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            step_labels = {
-                "detect_meter": ("Detect Meter", "YOLOv8-OBB"),
-                "recognize_digits": ("Recognize Digits", "YOLOv8-OBB"),
-                "validate": ("Validation", "Confidence check"),
-            }
-            items = "".join(
-                f'<li><p class="step-title">{step_labels.get(k, (k, ""))[0]}</p>'
-                f'<p class="step-meta">{step_labels.get(k, (k, ""))[1]} &middot; {v:.2f}s</p></li>'
-                for k, v in result["timings"].items()
-            )
-            st.markdown(
-                f"""
-                <p class="mb-label-caps" style="margin-top:16px;">Processing Workflow</p>
-                <ul class="mb-timeline">{items}</ul>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            if result["table"] is not None:
-                with st.expander("Per-digit breakdown"):
-                    st.dataframe(result["table"], use_container_width=True, hide_index=True)
-
-                csv = result["table"].to_csv(index=False).encode("utf-8")
-                st.download_button(
-                    "Download results (CSV)",
-                    data=csv,
-                    file_name="meter_reading.csv",
-                    mime="text/csv",
-                    use_container_width=True,
+                step_labels = {
+                    "detect_meter": ("Detect Meter", "YOLOv8-OBB"),
+                    "recognize_digits": ("Recognize Digits", "YOLOv8-OBB"),
+                    "validate": ("Validation", "Confidence check"),
+                }
+                items = "".join(
+                    f'<li><p class="step-title">{step_labels.get(k, (k, ""))[0]}</p>'
+                    f'<p class="step-meta">{step_labels.get(k, (k, ""))[1]} &middot; {v:.2f}s</p></li>'
+                    for k, v in result["timings"].items()
+                )
+                st.markdown(
+                    f"""
+                    <p class="mb-label-caps" style="margin-top:16px;">Processing Workflow</p>
+                    <ul class="mb-timeline">{items}</ul>
+                    """,
+                    unsafe_allow_html=True,
                 )
 
-    st.markdown("</div>", unsafe_allow_html=True)
+                if result["table"] is not None:
+                    with st.expander("Per-digit breakdown"):
+                        st.dataframe(result["table"], use_container_width=True, hide_index=True)
 
-# ---------------------------------------------------------------------------
-# About / footer
-# ---------------------------------------------------------------------------
+                    csv = result["table"].to_csv(index=False).encode("utf-8")
+                    st.download_button(
+                        "Download results (CSV)",
+                        data=csv,
+                        file_name="meter_reading.csv",
+                        mime="text/csv",
+                        use_container_width=True,
+                    )
+
 with st.expander("About this model"):
     st.markdown(
         "- **Stage 1** detects the meter body, the digit display window, and digits in the full photo.\n"
