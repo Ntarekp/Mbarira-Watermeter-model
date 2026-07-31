@@ -87,8 +87,8 @@ html, body,
 
 .mb-navbar {{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 20px;
     padding: 12px 4px 4px 4px;
     margin-bottom: 4px;
 }}
@@ -97,6 +97,13 @@ html, body,
     font-weight: 700;
     font-size: 22px;
     color: {COLORS["on_surface"]} !important;
+}}
+.mb-navbar .current {{
+    font-size: 15px;
+    font-weight: 700;
+    color: {COLORS["primary"]} !important;
+    border-bottom: 2px solid {COLORS["primary"]};
+    padding-bottom: 4px;
 }}
 
 .mb-navlinks {{
@@ -364,14 +371,36 @@ div[data-testid="stRadio"] input {{
 st.markdown(BASE_CSS, unsafe_allow_html=True)
 
 
-def render_navbar():
-    st.markdown('<div class="mb-navbar"><span class="brand">Mbarira AI</span></div>', unsafe_allow_html=True)
+def safe_page_link(page, label, icon=None):
+    """st.page_link()/st.switch_page() rely on Streamlit's internal page
+    registry, which has proven unreliable on this deployment (KeyError on
+    'url_pathname'). Never let a navigation nicety take the whole app down --
+    fall back to a plain caption pointing at the sidebar, which Streamlit
+    always populates automatically from the pages/ folder regardless of
+    this bug."""
+    try:
+        st.page_link(page, label=label, icon=icon)
+    except Exception:
+        st.caption(f"➜ {label} -- use the page list in the sidebar (top-left ⌃).")
+
+
+def render_navbar(active="Demo"):
+    st.markdown(
+        f'<div class="mb-navbar"><span class="brand">Mbarira AI</span></div>',
+        unsafe_allow_html=True,
+    )
     st.markdown('<div class="mb-navlinks">', unsafe_allow_html=True)
     nav_cols = st.columns([1, 1, 8])
     with nav_cols[0]:
-        st.page_link("app.py", label="Demo", icon="🏠")
+        if active == "Demo":
+            st.markdown('<span class="current">Demo</span>', unsafe_allow_html=True)
+        else:
+            safe_page_link("app.py", "Demo", icon="🏠")
     with nav_cols[1]:
-        st.page_link("pages/1_📄_Documentation.py", label="Documentation", icon="📄")
+        if active == "Documentation":
+            st.markdown('<span class="current">Documentation</span>', unsafe_allow_html=True)
+        else:
+            safe_page_link("pages/1_📄_Documentation.py", "Documentation", icon="📄")
     st.markdown('</div>', unsafe_allow_html=True)
 
 
@@ -638,7 +667,7 @@ def read_meter(image, stage1_model, stage2_model):
     }
 
 
-render_navbar()
+render_navbar("Demo")
 
 st.markdown(
     """
@@ -650,7 +679,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-st.page_link("pages/1_📄_Documentation.py", label="📄  View Documentation", icon=None)
+safe_page_link("pages/1_📄_Documentation.py", "📄  View Documentation")
 st.write("")
 
 with st.spinner("Loading models..."):
