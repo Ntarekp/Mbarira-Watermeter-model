@@ -19,7 +19,6 @@ STAGE2_PATH = APP_DIR / "models" / "digit_detector.pt"
 
 STAGE2_CLASSES = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "u"]
 CROP_IMGSZ = 416
-CROP_PAD = 0.12
 
 STAGE2_CONF = 0.35
 STAGE2_IOU = 0.45
@@ -27,6 +26,18 @@ STAGE2_IOU = 0.45
 ROW_GAP_FRAC = 0.9   # gap (x median digit height) that starts a new row
 
 SPAN_OVERLAP_THRESH = 0.4
+
+# Padding for the deskewed crop, expressed as a multiple of digit HEIGHT
+# rather than a fraction of the detected window box's own width. The
+# window box's width is sometimes too tight -- e.g. it clips a
+# color-differentiated last digit -- so padding relative to that width
+# just scales the same mistake. Height is a reliable signal (digit size
+# doesn't change), so padding relative to it reliably recovers roughly
+# one extra digit's worth of margin on each side regardless of how tight
+# Stage 1's box guess was. Vertical padding stays modest since the window
+# box's height is usually already generous.
+CROP_PAD_X_DIGITS = 0.8   # horizontal pad, each side, as a multiple of digit height
+CROP_PAD_Y_FRAC = 0.15    # vertical pad, each side, as a multiple of digit height
 
 # Optional: purely a UI heads-up, never trims/pads the actual reading.
 EXPECTED_DIGITS = None  # e.g. 8
@@ -406,9 +417,7 @@ def load_models():
 
 def find_window_obb(result):
     """Returns the 4-corner polygon (numpy array, shape (4,2)) of the
-    largest 'window' detection, or None. Unlike a plain axis-aligned box,
-    this keeps the meter's actual rotation -- which is what lets us
-    deskew the crop instead of just cropping around a tilted region."""
+    largest 'window' detection, or None."""
     if result.obb is None or len(result.obb) == 0:
         return None
     names = result.names
@@ -426,7 +435,7 @@ def find_window_obb(result):
     return best
 
 
-def deskew_window(img, poly, pad_frac=CROP_PAD):
+def deskew_window(img, poly, pad_x_digits=CROP_PAD_X_DIGITS, pad_y_frac=CROP_PAD_Y_FRAC):
     """Rotates the FULL image so the digit window's long axis is
     horizontal, then crops it. This is what fixes reversed readings:
     sorting digits by x-position only means "left to right" if the crop's
@@ -435,9 +444,15 @@ def deskew_window(img, poly, pad_frac=CROP_PAD):
 
     Rotation is normalized to the box's LONGER side, keeping it within
     roughly +/-45 degrees of the original for a typical handheld tilt --
-    i.e. it straightens the row without flipping it upside-down. (A full
-    180-degree upside-down photo is a separate, harder problem geometry
-    alone can't resolve.)
+    i.e. it straightens the row without flipping it upside-down.
+
+    Padding: horizontal padding is `pad_x_digits * h` per side (h = the
+    box's digit-row height, a reliable signal) rather than a fraction of
+    the box's own width. The window box's width is sometimes too tight
+    -- e.g. a color-differentiated last digit gets clipped out of the
+    Stage-1 detection -- so padding relative to that width just scales
+    the same mistake. Vertical padding is smaller since the box's height
+    is usually already generous.
     """
     rect = cv2.minAreaRect(poly.astype(np.float32))
     (cx, cy), (w, h), angle = rect
@@ -452,7 +467,10 @@ def deskew_window(img, poly, pad_frac=CROP_PAD):
         img, M, (w_img, h_img), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE
     )
 
-    pw, ph = w * (1 + pad_frac), h * (1 + pad_frac)
+    pad_x = h * pad_x_digits
+    pad_y = h * pad_y_frac
+    pw, ph = w + 2 * pad_x, h + 2 * pad_y
+
     x0 = int(max(0, cx - pw / 2))
     y0 = int(max(0, cy - ph / 2))
     x1 = int(min(w_img, cx + pw / 2))
@@ -494,9 +512,6 @@ def _spans_overlap(a, b, overlap_frac=SPAN_OVERLAP_THRESH):
 
 
 def _cluster_rows(y_vals, median_h, gap_frac=ROW_GAP_FRAC):
-    """Group candidate boxes into rows by clustering their y-coordinate.
-    Operates on plain y because the crop is deskewed upright before this
-    ever runs -- no line-fitting or direction-sign guessing needed."""
     order = np.argsort(y_vals)
     sorted_y = y_vals[order]
     groups = [[int(order[0])]]
@@ -509,9 +524,6 @@ def _cluster_rows(y_vals, median_h, gap_frac=ROW_GAP_FRAC):
 
 
 def clean_digit_detections(xyxyxyxy, cls_ids, confs):
-    """Returns (kept, discarded). Because the crop is already deskewed to
-    upright, left-to-right always means increasing x -- no direction
-    ambiguity left to get wrong."""
     if len(cls_ids) == 0:
         return [], []
 
@@ -596,7 +608,7 @@ def read_meter(image, stage1_model, stage2_model):
             "table": None, "reading": None, "timings": timings,
         }
 
-    crop = deskew_window(img, window_poly, CROP_PAD)
+    crop = deskew_window(img, window_poly)
     if crop.size == 0:
         return {
             "annotated_full": annotated_full, "crop_canvas": None,
