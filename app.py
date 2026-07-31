@@ -21,6 +21,13 @@ STAGE2_CLASSES = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "u"]
 CROP_IMGSZ = 416
 CROP_PAD = 0.12
 
+# --- Detection quality controls -------------------------------------------
+STAGE2_CONF = 0.40   # was 0.25 -- too low, lets noise through as "digits"
+STAGE2_IOU = 0.45    # tighter NMS overlap threshold
+MAX_DIGITS = 8       # <-- set to the ACTUAL number of digit slots on your
+                     #     meters (e.g. 5 black + 3 red = 8). Hard-caps how
+                     #     many detections can survive into the reading.
+
 # ---------------------------------------------------------------------------
 # Theme tokens -- lifted directly from the Mbarira AI Tailwind mockup so the
 # deployed app matches the original design exactly.
@@ -409,6 +416,76 @@ def pil_to_b64(img: Image.Image) -> str:
     return base64.b64encode(buf.getvalue()).decode("utf-8")
 
 
+def _obb_center_and_size(pts):
+    cx = pts[:, 0].mean()
+    cy = pts[:, 1].mean()
+    w = pts[:, 0].max() - pts[:, 0].min()
+    h = pts[:, 1].max() - pts[:, 1].min()
+    return cx, cy, w, h
+
+
+def _spans_overlap(a, b, overlap_frac=0.4):
+    """1D horizontal overlap between two (x_min, x_max) spans, as a fraction
+    of their union. Catches two different-class boxes sitting on the same
+    physical digit slot."""
+    ax0, ax1 = a
+    bx0, bx1 = b
+    inter = max(0.0, min(ax1, bx1) - max(ax0, bx0))
+    union = max(ax1, bx1) - min(ax0, bx0)
+    return union > 0 and (inter / union) > overlap_frac
+
+
+def clean_digit_detections(xyxyxyxy, cls_ids, confs, max_digits=MAX_DIGITS):
+    """Turns raw stage-2 OBB detections into a clean, left-to-right list of
+    (cx, label, conf) tuples. Fixes the two failure modes that make readings
+    come out wrong / too long:
+
+      1. Ultralytics NMS only suppresses overlapping boxes of the SAME
+         class, so a genuine digit slot can keep two competing boxes (e.g.
+         a "3" box and an "8" box both on one physical digit) -- both
+         survive and both get added to the reading.
+      2. Small stray detections (a sub-dial number, a reflection, a
+         serial-number digit near the window edge) get picked up as extra
+         "digits" even though they don't belong to the odometer row.
+    """
+    candidates = []
+    for pts, cid, conf in zip(xyxyxyxy, cls_ids, confs):
+        cx, cy, w, h = _obb_center_and_size(pts)
+        label = STAGE2_CLASSES[cid] if cid < len(STAGE2_CLASSES) else "?"
+        candidates.append({
+            "cx": cx, "cy": cy, "h": h,
+            "label": label, "conf": float(conf),
+            "span": (pts[:, 0].min(), pts[:, 0].max()),
+        })
+
+    if not candidates:
+        return []
+
+    # 1. Drop boxes whose height is way off from the typical digit height
+    #    in this crop (catches stray/sub-dial detections).
+    heights = np.array([c["h"] for c in candidates])
+    median_h = np.median(heights)
+    mad_h = np.median(np.abs(heights - median_h)) or 1.0
+    candidates = [c for c in candidates if abs(c["h"] - median_h) / mad_h < 3.0]
+
+    # 2. Cross-class NMS: keep the highest-confidence box in each physical
+    #    slot, drop anything that horizontally overlaps a box already kept.
+    candidates.sort(key=lambda c: c["conf"], reverse=True)
+    kept = []
+    for c in candidates:
+        if not any(_spans_overlap(c["span"], k["span"]) for k in kept):
+            kept.append(c)
+
+    # 3. Hard cap at the expected number of digit slots -- if more survive,
+    #    keep only the most confident ones.
+    if len(kept) > max_digits:
+        kept = sorted(kept, key=lambda c: c["conf"], reverse=True)[:max_digits]
+
+    # 4. Final left-to-right reading order.
+    kept.sort(key=lambda c: c["cx"])
+    return [(c["cx"], c["label"], c["conf"]) for c in kept]
+
+
 def read_meter(image, stage1_model, stage2_model):
     """Runs the two-stage pipeline and returns everything the UI needs,
     including per-stage timings for the workflow timeline."""
@@ -448,7 +525,16 @@ def read_meter(image, stage1_model, stage2_model):
 
     canvas = letterbox(crop, CROP_IMGSZ)
     t1 = time.time()
-    r2 = stage2_model.predict(canvas, imgsz=CROP_IMGSZ, conf=0.25, verbose=False)[0]
+    r2 = stage2_model.predict(
+        canvas,
+        imgsz=CROP_IMGSZ,
+        conf=STAGE2_CONF,
+        iou=STAGE2_IOU,
+        agnostic_nms=True,     # suppress overlapping boxes across DIFFERENT
+                               # classes too, not just within the same class
+        max_det=MAX_DIGITS + 4,
+        verbose=False,
+    )[0]
     timings["recognize_digits"] = time.time() - t1
     annotated_crop = Image.fromarray(r2.plot()[:, :, ::-1])
 
@@ -468,12 +554,7 @@ def read_meter(image, stage1_model, stage2_model):
     cls_ids = r2.obb.cls.cpu().numpy().astype(int)
     confs = r2.obb.conf.cpu().numpy()
 
-    digits = []
-    for pts, cid, conf in zip(xyxyxyxy, cls_ids, confs):
-        cx = pts[:, 0].mean()
-        label = STAGE2_CLASSES[cid] if cid < len(STAGE2_CLASSES) else "?"
-        digits.append((cx, label, float(conf)))
-    digits.sort(key=lambda d: d[0])
+    digits = clean_digit_detections(xyxyxyxy, cls_ids, confs, max_digits=MAX_DIGITS)
 
     reading = "".join(d[1] if d[1] != "u" else "?" for d in digits)
     low_conf = any(d[2] < 0.5 for d in digits)
