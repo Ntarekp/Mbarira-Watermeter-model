@@ -24,8 +24,7 @@ CROP_PAD = 0.12
 STAGE2_CONF = 0.35
 STAGE2_IOU = 0.45
 
-ROW_Y_TOLERANCE = 0.6
-ROW_HEIGHT_TOLERANCE = 3.0
+ROW_GAP_FRAC = 0.9   # gap (x median digit height) that starts a new row
 SPAN_OVERLAP_THRESH = 0.4
 
 # Optional: purely a UI heads-up, never trims/pads the actual reading.
@@ -480,14 +479,34 @@ def _fit_row_line(centers):
     return origin, direction, perp
 
 
+def _cluster_rows(perp_d, median_h, gap_frac=ROW_GAP_FRAC):
+    """Group candidate boxes into rows by clustering their (signed)
+    perpendicular offset from the fitted reference line. A gap bigger than
+    gap_frac * median_h between consecutive offsets starts a new row. This
+    is what lets a meter with a genuine second row -- e.g. a red
+    sub-counter dial next to the main black digit wheels -- be recognized
+    as a second row of real digits, instead of everything off the single
+    fitted line being discarded as noise."""
+    order = np.argsort(perp_d)
+    sorted_d = perp_d[order]
+    groups = [[int(order[0])]]
+    for i in range(1, len(order)):
+        if sorted_d[i] - sorted_d[i - 1] > gap_frac * median_h:
+            groups.append([int(order[i])])
+        else:
+            groups[-1].append(int(order[i]))
+    return groups
+
+
 def clean_digit_detections(xyxyxyxy, cls_ids, confs):
-    """Returns (kept, discarded). `kept` becomes the reading. `discarded` is
-    kept only so the UI can optionally show what was filtered and why, for
-    auditing -- it never affects the reading. Filtering uses only the
-    geometry of what the model detected (position relative to the fitted
-    row line, physical-slot overlap projected along that row) -- never a
-    fixed digit count, so genuine repeats like "00" pass straight through,
-    and it stays correct even when the row is rotated/skewed."""
+    """Returns (kept, discarded). `kept` becomes the reading, ordered as:
+    the main row (the cluster with the most detections) left-to-right,
+    followed by any secondary row(s) -- e.g. a red sub-counter dial --
+    also left-to-right. A box is discarded ONLY if it's a true duplicate:
+    another box on the same physical slot within the same row. A box is
+    never discarded just for sitting in a different row than the majority
+    -- multi-row meters are real, and treating a second row as noise
+    silently drops genuine digits."""
     if len(cls_ids) == 0:
         return [], []
 
@@ -506,43 +525,37 @@ def clean_digit_detections(xyxyxyxy, cls_ids, confs):
     origin, direction, perp = _fit_row_line([(c["cx"], c["cy"]) for c in candidates])
 
     heights = np.array([c["h"] for c in candidates])
-    median_h = float(np.median(heights))
-    mad_h = float(np.median(np.abs(heights - median_h))) or (median_h * 0.15 or 1.0)
+    median_h = float(np.median(heights)) or 1.0
 
     perp_d = np.array([
-        abs((c["cx"] - origin[0]) * perp[0] + (c["cy"] - origin[1]) * perp[1])
+        (c["cx"] - origin[0]) * perp[0] + (c["cy"] - origin[1]) * perp[1]
         for c in candidates
     ])
 
-    in_row, off_row = [], []
-    for c, d in zip(candidates, perp_d):
-        if (abs(c["h"] - median_h) <= ROW_HEIGHT_TOLERANCE * mad_h
-                and d <= ROW_Y_TOLERANCE * median_h):
-            in_row.append(c)
-        else:
-            c["reason"] = "off digit row"
-            off_row.append(c)
+    row_groups = _cluster_rows(perp_d, median_h)
+    # Main row = whichever cluster has the most digits; ties broken by
+    # closeness to the fitted reference line.
+    row_groups.sort(key=lambda g: (-len(g), min(abs(perp_d[i]) for i in g)))
 
-    if not in_row:
-        in_row, off_row = candidates, []
-
-    for c in in_row:
+    for c in candidates:
         proj = (c["poly"][:, 0] - origin[0]) * direction[0] + (c["poly"][:, 1] - origin[1]) * direction[1]
         c["t_span"] = (float(proj.min()), float(proj.max()))
         c["t"] = float((proj.min() + proj.max()) / 2)
 
-    in_row.sort(key=lambda c: c["conf"], reverse=True)
-    kept, slot_discarded = [], []
-    for c in in_row:
-        overlap_with = next((k for k in kept if _spans_overlap(c["t_span"], k["t_span"])), None)
-        if overlap_with is None:
-            kept.append(c)
-        else:
-            c["reason"] = f'duplicate of "{overlap_with["label"]}" on same slot'
-            slot_discarded.append(c)
+    kept, discarded = [], []
+    for group in row_groups:
+        row_candidates = sorted((candidates[i] for i in group), key=lambda c: c["conf"], reverse=True)
+        row_kept = []
+        for c in row_candidates:
+            overlap_with = next((k for k in row_kept if _spans_overlap(c["t_span"], k["t_span"])), None)
+            if overlap_with is None:
+                row_kept.append(c)
+            else:
+                c["reason"] = f'duplicate of "{overlap_with["label"]}" on same slot'
+                discarded.append(c)
+        row_kept.sort(key=lambda c: c["t"])
+        kept.extend(row_kept)
 
-    kept.sort(key=lambda c: c["t"])
-    discarded = off_row + slot_discarded
     return kept, discarded
 
 
