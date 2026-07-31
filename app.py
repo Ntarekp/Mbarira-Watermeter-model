@@ -89,9 +89,8 @@ html, body,
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 4px 20px 4px;
-    border-bottom: 1px solid {COLORS["outline_variant"]}55;
-    margin-bottom: 24px;
+    padding: 12px 4px 4px 4px;
+    margin-bottom: 4px;
 }}
 .mb-navbar .brand {{
     font-family: 'Sora', sans-serif;
@@ -99,17 +98,28 @@ html, body,
     font-size: 22px;
     color: {COLORS["on_surface"]} !important;
 }}
-.mb-navbar .links a {{
-    color: {COLORS["on_surface_variant"]} !important;
-    text-decoration: none;
-    margin-left: 24px;
-    font-size: 15px;
-}}
-.mb-navbar .links a.active {{
-    color: {COLORS["primary"]} !important;
-    font-weight: 700;
-    border-bottom: 2px solid {COLORS["primary"]};
+
+.mb-navlinks {{
+    border-bottom: 1px solid {COLORS["outline_variant"]}55;
+    margin-bottom: 24px;
     padding-bottom: 4px;
+}}
+[data-testid="stPageLink"] {{
+    width: auto !important;
+}}
+[data-testid="stPageLink"] a {{
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 4px 2px !important;
+    font-size: 15px !important;
+    color: {COLORS["on_surface_variant"]} !important;
+}}
+[data-testid="stPageLink"] a:hover {{
+    color: {COLORS["primary"]} !important;
+}}
+[data-testid="stPageLink"] p {{
+    font-size: 15px !important;
 }}
 
 .mb-header h1 {{
@@ -354,18 +364,15 @@ div[data-testid="stRadio"] input {{
 st.markdown(BASE_CSS, unsafe_allow_html=True)
 
 
-def render_navbar(active="Demo"):
-    links = ["Demo", "Documentation"]
-    html_links = "".join(
-        f'<a href="#" class="{"active" if link == active else ""}">{link}</a>'
-        for link in links
-    )
-    return f"""
-    <div class="mb-navbar">
-        <span class="brand">Mbarira AI</span>
-        <div class="links">{html_links}</div>
-    </div>
-    """
+def render_navbar():
+    st.markdown('<div class="mb-navbar"><span class="brand">Mbarira AI</span></div>', unsafe_allow_html=True)
+    st.markdown('<div class="mb-navlinks">', unsafe_allow_html=True)
+    nav_cols = st.columns([1, 1, 8])
+    with nav_cols[0]:
+        st.page_link("app.py", label="Demo", icon="🏠")
+    with nav_cols[1]:
+        st.page_link("pages/1_📄_Documentation.py", label="Documentation", icon="📄")
+    st.markdown('</div>', unsafe_allow_html=True)
 
 
 @st.cache_resource
@@ -440,13 +447,27 @@ def _spans_overlap(a, b, overlap_frac=SPAN_OVERLAP_THRESH):
     return union > 0 and (inter / union) > overlap_frac
 
 
+def _fit_row_line(centers):
+    """Fit a line through the digit-box centers with SVD (total least
+    squares) instead of assuming the row is horizontal, so a tilted photo
+    doesn't get its real digits mis-filtered as off-row or duplicates."""
+    pts = np.array(centers, dtype=float)
+    origin = pts.mean(axis=0)
+    centered = pts - origin
+    _, _, vt = np.linalg.svd(centered)
+    direction = vt[0] / np.linalg.norm(vt[0])
+    perp = np.array([-direction[1], direction[0]])
+    return origin, direction, perp
+
+
 def clean_digit_detections(xyxyxyxy, cls_ids, confs):
     """Returns (kept, discarded). `kept` becomes the reading. `discarded` is
     kept only so the UI can optionally show what was filtered and why, for
     auditing -- it never affects the reading. Filtering uses only the
-    geometry of what the model detected (row height/position, physical-slot
-    overlap) -- never a fixed digit count, so genuine repeats like "00"
-    pass straight through untouched."""
+    geometry of what the model detected (position relative to the fitted
+    row line, physical-slot overlap projected along that row) -- never a
+    fixed digit count, so genuine repeats like "00" pass straight through,
+    and it stays correct even when the row is rotated/skewed."""
     if len(cls_ids) == 0:
         return [], []
 
@@ -459,16 +480,24 @@ def clean_digit_detections(xyxyxyxy, cls_ids, confs):
             "label": label, "conf": float(conf), "reason": None,
         })
 
+    if len(candidates) == 1:
+        return candidates, []
+
+    origin, direction, perp = _fit_row_line([(c["cx"], c["cy"]) for c in candidates])
+
     heights = np.array([c["h"] for c in candidates])
-    cys = np.array([c["cy"] for c in candidates])
     median_h = float(np.median(heights))
-    median_cy = float(np.median(cys))
     mad_h = float(np.median(np.abs(heights - median_h))) or (median_h * 0.15 or 1.0)
 
+    perp_d = np.array([
+        abs((c["cx"] - origin[0]) * perp[0] + (c["cy"] - origin[1]) * perp[1])
+        for c in candidates
+    ])
+
     in_row, off_row = [], []
-    for c in candidates:
+    for c, d in zip(candidates, perp_d):
         if (abs(c["h"] - median_h) <= ROW_HEIGHT_TOLERANCE * mad_h
-                and abs(c["cy"] - median_cy) <= ROW_Y_TOLERANCE * median_h):
+                and d <= ROW_Y_TOLERANCE * median_h):
             in_row.append(c)
         else:
             c["reason"] = "off digit row"
@@ -477,17 +506,22 @@ def clean_digit_detections(xyxyxyxy, cls_ids, confs):
     if not in_row:
         in_row, off_row = candidates, []
 
+    for c in in_row:
+        proj = (c["poly"][:, 0] - origin[0]) * direction[0] + (c["poly"][:, 1] - origin[1]) * direction[1]
+        c["t_span"] = (float(proj.min()), float(proj.max()))
+        c["t"] = float((proj.min() + proj.max()) / 2)
+
     in_row.sort(key=lambda c: c["conf"], reverse=True)
     kept, slot_discarded = [], []
     for c in in_row:
-        overlap_with = next((k for k in kept if _spans_overlap(c["span"], k["span"])), None)
+        overlap_with = next((k for k in kept if _spans_overlap(c["t_span"], k["t_span"])), None)
         if overlap_with is None:
             kept.append(c)
         else:
             c["reason"] = f'duplicate of "{overlap_with["label"]}" on same slot'
             slot_discarded.append(c)
 
-    kept.sort(key=lambda c: c["cx"])
+    kept.sort(key=lambda c: c["t"])
     discarded = off_row + slot_discarded
     return kept, discarded
 
@@ -505,7 +539,7 @@ def draw_digit_boxes(canvas_bgr, kept, discarded, show_discarded=False):
             cv2.polylines(img, [pts], isClosed=True, color=(150, 150, 150), thickness=1)
             x = int(c["span"][0])
             y = max(12, int(pts[:, 1].min()) - 4)
-            cv2.putText(img, f'x {c["label"]}', (x, y),
+            cv2.putText(img, f'x {c["label"]} ({c["reason"]})', (x, y),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.4, (150, 150, 150), 1, cv2.LINE_AA)
 
     for c in kept:
@@ -578,7 +612,7 @@ def read_meter(image, stage1_model, stage2_model):
     timings["validate"] = time.time() - t2
 
     if has_unclear:
-        status, message = "warn", "Contains an unclear digit (marked `?`) -- recommend manual check."
+        status, message = "warn", "Contains a digit the model flagged as genuinely unclear (marked `?`) -- recommend manual check."
     elif low_conf:
         status, message = "warn", "Low confidence on one or more digits -- recommend manual check."
     elif count_mismatch:
@@ -604,7 +638,7 @@ def read_meter(image, stage1_model, stage2_model):
     }
 
 
-st.markdown(render_navbar("Demo"), unsafe_allow_html=True)
+render_navbar()
 
 st.markdown(
     """
@@ -616,6 +650,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+st.page_link("pages/1_📄_Documentation.py", label="📄  View Documentation", icon=None)
 st.write("")
 
 with st.spinner("Loading models..."):
@@ -704,8 +739,8 @@ with col_preview:
                 )
                 if show_discarded and result["discarded_digits"]:
                     st.caption(
-                        "Gray boxes = detections filtered out before the reading was built "
-                        "(shown for debugging only, never counted)."
+                        "Gray boxes = detections filtered out before the reading was built, with "
+                        "the reason each was dropped -- shown for debugging only, never counted."
                     )
 
 with col_results:
