@@ -1,4 +1,5 @@
 import base64
+import hashlib
 import io
 import time
 from pathlib import Path
@@ -20,6 +21,10 @@ STAGE2_CLASSES = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "u"]
 CROP_IMGSZ = 416
 CROP_PAD = 0.12
 
+# ---------------------------------------------------------------------------
+# Theme tokens -- lifted directly from the Mbarira AI Tailwind mockup so the
+# deployed app matches the original design exactly.
+# ---------------------------------------------------------------------------
 COLORS = {
     "primary": "#00543b",
     "primary_container": "#0b6e4f",
@@ -46,6 +51,9 @@ BASE_CSS = f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600&family=Sora:wght@700&display=swap');
 
+/* Force the light theme regardless of the viewer's OS/browser dark-mode
+   setting. Streamlit's own dark theme sits on .stApp / stAppViewContainer,
+   underneath which our light CSS would otherwise be invisible. */
 :root {{
     color-scheme: light !important;
 }}
@@ -111,6 +119,9 @@ html, body,
     max-width: 640px;
 }}
 
+/* Streamlit's own bordered container (st.container(border=True)) is what
+   we use for cards, so the box actually wraps the widgets inside it -
+   not a manually opened <div> that Streamlit renders as a sibling. */
 [data-testid="stVerticalBlockBorderWrapper"] {{
     background: {COLORS["surface_container_lowest"]} !important;
     border: 1px solid {COLORS["outline_variant"]} !important;
@@ -154,6 +165,7 @@ html, body,
     50% {{ opacity: 0.3; }}
 }}
 
+/* Restyle the native Streamlit uploader to look like the drop-zone */
 [data-testid="stFileUploaderDropzone"] {{
     background: transparent !important;
     border: 2px dashed {COLORS["outline_variant"]} !important;
@@ -310,6 +322,31 @@ div.stButton > button[kind="primary"] {{
     background-color: {COLORS["primary_container"]};
     border-color: {COLORS["primary_container"]};
 }}
+
+/* Segmented-tab look for the Upload / Camera toggle */
+div[data-testid="stRadio"] > div {{
+    display: flex;
+    gap: 6px;
+    background: {COLORS["surface_container_low"]};
+    padding: 4px;
+    border-radius: 8px;
+}}
+div[data-testid="stRadio"] label {{
+    flex: 1;
+    justify-content: center;
+    background: transparent;
+    border-radius: 6px;
+    padding: 6px 10px !important;
+    margin: 0 !important;
+    cursor: pointer;
+}}
+div[data-testid="stRadio"] label:has(input:checked) {{
+    background: {COLORS["surface_container_lowest"]};
+    box-shadow: 0 1px 2px rgba(15,23,42,0.08);
+}}
+div[data-testid="stRadio"] input {{
+    display: none;
+}}
 </style>
 """
 
@@ -373,6 +410,8 @@ def pil_to_b64(img: Image.Image) -> str:
 
 
 def read_meter(image, stage1_model, stage2_model):
+    """Runs the two-stage pipeline and returns everything the UI needs,
+    including per-stage timings for the workflow timeline."""
     timings = {}
     img = np.array(image.convert("RGB"))[:, :, ::-1].copy()
     h, w = img.shape[:2]
@@ -467,6 +506,9 @@ def read_meter(image, stage1_model, stage2_model):
     }
 
 
+# ---------------------------------------------------------------------------
+# Top nav bar
+# ---------------------------------------------------------------------------
 st.markdown(
     """
     <div class="mb-navbar">
@@ -481,6 +523,9 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# ---------------------------------------------------------------------------
+# Header
+# ---------------------------------------------------------------------------
 st.markdown(
     """
     <div class="mb-header">
@@ -498,31 +543,55 @@ with st.spinner("Loading models..."):
 
 if "result" not in st.session_state:
     st.session_state.result = None
-if "uploaded_name" not in st.session_state:
-    st.session_state.uploaded_name = None
+if "uploaded_key" not in st.session_state:
+    st.session_state.uploaded_key = None
 
+# ---------------------------------------------------------------------------
+# Bento grid: upload | preview | results
+# ---------------------------------------------------------------------------
 col_upload, col_preview, col_results = st.columns([4, 5, 3], gap="large")
 
 with col_upload:
     with st.container(border=True):
         st.markdown('<div class="mb-card-title">Upload Meter Image</div>', unsafe_allow_html=True)
-        uploaded = st.file_uploader(
-            "Drag & drop image here",
-            type=["jpg", "jpeg", "png"],
+
+        input_mode = st.radio(
+            "Source",
+            ["Upload photo", "Use camera"],
+            horizontal=True,
             label_visibility="collapsed",
+            key="input_mode",
         )
-        st.caption("Supports JPG, PNG (Max 5MB)")
+
+        picked_file = None
+        if input_mode == "Upload photo":
+            picked_file = st.file_uploader(
+                "Drag & drop image here",
+                type=["jpg", "jpeg", "png"],
+                label_visibility="collapsed",
+            )
+            st.caption("Supports JPG, PNG (Max 5MB)")
+        else:
+            picked_file = st.camera_input(
+                "Take a photo of the meter",
+                label_visibility="collapsed",
+            )
+            st.caption("On phones this opens your camera directly -- hold the meter's digit window steady and well-lit.")
+
         reset = st.button("Analyze another", use_container_width=True)
         if reset:
             st.session_state.result = None
-            st.session_state.uploaded_name = None
+            st.session_state.uploaded_key = None
             st.rerun()
 
-if uploaded is not None and uploaded.name != st.session_state.uploaded_name:
-    image = Image.open(uploaded)
-    with st.spinner("Analyzing meter..."):
-        st.session_state.result = read_meter(image, stage1_model, stage2_model)
-    st.session_state.uploaded_name = uploaded.name
+if picked_file is not None:
+    file_bytes = picked_file.getvalue()
+    file_key = hashlib.md5(file_bytes).hexdigest()
+    if file_key != st.session_state.uploaded_key:
+        image = Image.open(picked_file)
+        with st.spinner("Analyzing meter..."):
+            st.session_state.result = read_meter(image, stage1_model, stage2_model)
+        st.session_state.uploaded_key = file_key
 
 result = st.session_state.result
 
@@ -643,6 +712,9 @@ with col_results:
                         use_container_width=True,
                     )
 
+# ---------------------------------------------------------------------------
+# About / footer
+# ---------------------------------------------------------------------------
 with st.expander("About this model"):
     st.markdown(
         "- **Stage 1** detects the meter body, the digit display window, and digits in the full photo.\n"
