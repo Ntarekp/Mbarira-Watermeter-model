@@ -1,0 +1,59 @@
+ORPHAN_LABEL: water_meter_000023
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000023.txt
+
+ORPHAN_LABEL: water_meter_000024
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000024.txt
+
+ORPHAN_LABEL: water_meter_000025
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000025.txt
+
+ORPHAN_LABEL: water_meter_000028
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000028.txt
+
+ORPHAN_LABEL: water_meter_000030
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000030.txt
+
+ORPHAN_LABEL: water_meter_000036
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000036.txt
+
+ORPHAN_LABEL: water_meter_000041
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000041.txt
+
+ORPHAN_LABEL: water_meter_000044
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000044.txt
+
+ORPHAN_LABEL: water_meter_000045
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000045.txt
+
+ORPHAN_LABEL: water_meter_000046
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000046.txt
+
+ORPHAN_LABEL: water_meter_000047
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000047.txt
+
+ORPHAN_LABEL: water_meter_000048
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000048.txt
+
+ORPHAN_LABEL: water_meter_000049
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000049.txt
+
+ORPHAN_LABEL: water_meter_000050
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000050.txt
+
+ORPHAN_LABEL: water_meter_000051
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000051.txt
+
+ORPHAN_LABEL: water_meter_000052
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000052.txt
+
+ORPHAN_LABEL: water_meter_000115_restored_1
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000115_restored_1.txt
+
+ORPHAN_LABEL: water_meter_000128_restored_1
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000128_restored_1.txt
+
+ORPHAN_LABEL: water_meter_000644_restored_1
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000644_restored_1.txt
+
+ORPHAN_LABEL: water_meter_000645_restored_1
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000645_restored_1.txt

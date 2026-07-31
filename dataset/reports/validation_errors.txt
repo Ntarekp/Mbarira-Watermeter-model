@@ -1,0 +1,6 @@
+INVALID_PAIR_SKIPPED: water_meter_000185
+  image: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000185.jpg
+  label: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000185.txt
+  error: OpenCV failed to read image, possibly too large: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000185.jpg
+  error: OpenCV error: OpenCV(4.13.0) /io/opencv/modules/imgcodecs/src/loadsave.cpp:79: error: (-215:Assertion failed) pixels <= CV_IO_MAX_IMAGE_PIXELS in function 'validateInputImageSize'
+

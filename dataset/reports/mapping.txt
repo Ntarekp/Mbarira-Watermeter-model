@@ -1,0 +1,2035 @@
+wm_clean_000001
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000001.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000001.txt
+
+wm_clean_000002
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000002.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000002.txt
+
+wm_clean_000003
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000003.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000003.txt
+
+wm_clean_000004
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000004.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000004.txt
+
+wm_clean_000005
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000005.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000005.txt
+
+wm_clean_000006
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000007.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000007.txt
+
+wm_clean_000007
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000008.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000008.txt
+
+wm_clean_000008
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000009.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000009.txt
+
+wm_clean_000009
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000010.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000010.txt
+
+wm_clean_000010
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000011.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000011.txt
+
+wm_clean_000011
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000012.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000012.txt
+
+wm_clean_000012
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000013.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000013.txt
+
+wm_clean_000013
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000014.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000014.txt
+
+wm_clean_000014
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000015.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000015.txt
+
+wm_clean_000015
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000016.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000016.txt
+
+wm_clean_000016
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000017.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000017.txt
+
+wm_clean_000017
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000018.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000018.txt
+
+wm_clean_000018
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000019.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000019.txt
+
+wm_clean_000019
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000020.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000020.txt
+
+wm_clean_000020
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000021.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000021.txt
+
+wm_clean_000021
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000022.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000022.txt
+
+wm_clean_000022
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000026.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000026.txt
+
+wm_clean_000023
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000027.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000027.txt
+
+wm_clean_000024
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000029.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000029.txt
+
+wm_clean_000025
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000031.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000031.txt
+
+wm_clean_000026
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000032.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000032.txt
+
+wm_clean_000027
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000033.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000033.txt
+
+wm_clean_000028
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000034.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000034.txt
+
+wm_clean_000029
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000035.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000035.txt
+
+wm_clean_000030
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000037.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000037.txt
+
+wm_clean_000031
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000039.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000039.txt
+
+wm_clean_000032
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000042.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000042.txt
+
+wm_clean_000033
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000043.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000043.txt
+
+wm_clean_000034
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000053.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000053.txt
+
+wm_clean_000035
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000054.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000054.txt
+
+wm_clean_000036
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000055.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000055.txt
+
+wm_clean_000037
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000056.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000056.txt
+
+wm_clean_000038
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000057.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000057.txt
+
+wm_clean_000039
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000058.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000058.txt
+
+wm_clean_000040
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000059.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000059.txt
+
+wm_clean_000041
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000060.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000060.txt
+
+wm_clean_000042
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000061.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000061.txt
+
+wm_clean_000043
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000063.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000063.txt
+
+wm_clean_000044
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000064.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000064.txt
+
+wm_clean_000045
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000065.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000065.txt
+
+wm_clean_000046
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000066.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000066.txt
+
+wm_clean_000047
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000067.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000067.txt
+
+wm_clean_000048
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000068.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000068.txt
+
+wm_clean_000049
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000069.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000069.txt
+
+wm_clean_000050
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000070.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000070.txt
+
+wm_clean_000051
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000071.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000071.txt
+
+wm_clean_000052
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000072.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000072.txt
+
+wm_clean_000053
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000073.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000073.txt
+
+wm_clean_000054
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000074.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000074.txt
+
+wm_clean_000055
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000075.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000075.txt
+
+wm_clean_000056
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000077.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000077.txt
+
+wm_clean_000057
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000078.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000078.txt
+
+wm_clean_000058
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000079.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000079.txt
+
+wm_clean_000059
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000080.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000080.txt
+
+wm_clean_000060
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000081.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000081.txt
+
+wm_clean_000061
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000082.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000082.txt
+
+wm_clean_000062
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000083.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000083.txt
+
+wm_clean_000063
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000084.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000084.txt
+
+wm_clean_000064
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000085.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000085.txt
+
+wm_clean_000065
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000086.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000086.txt
+
+wm_clean_000066
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000087.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000087.txt
+
+wm_clean_000067
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000088.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000088.txt
+
+wm_clean_000068
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000089.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000089.txt
+
+wm_clean_000069
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000090.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000090.txt
+
+wm_clean_000070
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000093.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000093.txt
+
+wm_clean_000071
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000094.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000094.txt
+
+wm_clean_000072
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000095.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000095.txt
+
+wm_clean_000073
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000096.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000096.txt
+
+wm_clean_000074
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000098.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000098.txt
+
+wm_clean_000075
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000100.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000100.txt
+
+wm_clean_000076
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000101.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000101.txt
+
+wm_clean_000077
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000103.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000103.txt
+
+wm_clean_000078
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000104.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000104.txt
+
+wm_clean_000079
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000105.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000105.txt
+
+wm_clean_000080
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000108.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000108.txt
+
+wm_clean_000081
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000110.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000110.txt
+
+wm_clean_000082
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000111.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000111.txt
+
+wm_clean_000083
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000112.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000112.txt
+
+wm_clean_000084
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000113.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000113.txt
+
+wm_clean_000085
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000114.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000114.txt
+
+wm_clean_000086
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000117.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000117.txt
+
+wm_clean_000087
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000118.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000118.txt
+
+wm_clean_000088
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000119_restored_1.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000119_restored_1.txt
+
+wm_clean_000089
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000120.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000120.txt
+
+wm_clean_000090
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000121.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000121.txt
+
+wm_clean_000091
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000122.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000122.txt
+
+wm_clean_000092
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000123_restored_1.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000123_restored_1.txt
+
+wm_clean_000093
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000124.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000124.txt
+
+wm_clean_000094
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000125_restored_1.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000125_restored_1.txt
+
+wm_clean_000095
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000126_restored_1.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000126_restored_1.txt
+
+wm_clean_000096
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000127_restored_1.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000127_restored_1.txt
+
+wm_clean_000097
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000129.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000129.txt
+
+wm_clean_000098
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000130.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000130.txt
+
+wm_clean_000099
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000131.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000131.txt
+
+wm_clean_000100
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000132.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000132.txt
+
+wm_clean_000101
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000133.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000133.txt
+
+wm_clean_000102
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000134.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000134.txt
+
+wm_clean_000103
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000138.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000138.txt
+
+wm_clean_000104
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000140.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000140.txt
+
+wm_clean_000105
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000141.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000141.txt
+
+wm_clean_000106
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000142.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000142.txt
+
+wm_clean_000107
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000154.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000154.txt
+
+wm_clean_000108
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000155.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000155.txt
+
+wm_clean_000109
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000156.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000156.txt
+
+wm_clean_000110
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000157.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000157.txt
+
+wm_clean_000111
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000158.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000158.txt
+
+wm_clean_000112
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000159.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000159.txt
+
+wm_clean_000113
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000160.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000160.txt
+
+wm_clean_000114
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000161.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000161.txt
+
+wm_clean_000115
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000162.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000162.txt
+
+wm_clean_000116
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000163.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000163.txt
+
+wm_clean_000117
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000164.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000164.txt
+
+wm_clean_000118
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000166.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000166.txt
+
+wm_clean_000119
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000167.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000167.txt
+
+wm_clean_000120
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000168.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000168.txt
+
+wm_clean_000121
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000169.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000169.txt
+
+wm_clean_000122
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000177.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000177.txt
+
+wm_clean_000123
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000180.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000180.txt
+
+wm_clean_000124
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000181.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000181.txt
+
+wm_clean_000125
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000182.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000182.txt
+
+wm_clean_000126
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000183.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000183.txt
+
+wm_clean_000127
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000184.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000184.txt
+
+wm_clean_000128
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000188.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000188.txt
+
+wm_clean_000129
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000189.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000189.txt
+
+wm_clean_000130
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000190.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000190.txt
+
+wm_clean_000131
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000191.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000191.txt
+
+wm_clean_000132
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000192.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000192.txt
+
+wm_clean_000133
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000193.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000193.txt
+
+wm_clean_000134
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000194.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000194.txt
+
+wm_clean_000135
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000195.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000195.txt
+
+wm_clean_000136
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000196.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000196.txt
+
+wm_clean_000137
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000199.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000199.txt
+
+wm_clean_000138
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000200.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000200.txt
+
+wm_clean_000139
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000201.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000201.txt
+
+wm_clean_000140
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000202.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000202.txt
+
+wm_clean_000141
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000203.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000203.txt
+
+wm_clean_000142
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000207_restored_1.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000207_restored_1.txt
+
+wm_clean_000143
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000208.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000208.txt
+
+wm_clean_000144
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000209.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000209.txt
+
+wm_clean_000145
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000210.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000210.txt
+
+wm_clean_000146
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000211.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000211.txt
+
+wm_clean_000147
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000212.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000212.txt
+
+wm_clean_000148
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000214.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000214.txt
+
+wm_clean_000149
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000215.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000215.txt
+
+wm_clean_000150
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000216.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000216.txt
+
+wm_clean_000151
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000217.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000217.txt
+
+wm_clean_000152
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000220.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000220.txt
+
+wm_clean_000153
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000229.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000229.txt
+
+wm_clean_000154
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000230.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000230.txt
+
+wm_clean_000155
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000232.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000232.txt
+
+wm_clean_000156
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000233.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000233.txt
+
+wm_clean_000157
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000234.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000234.txt
+
+wm_clean_000158
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000235.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000235.txt
+
+wm_clean_000159
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000236.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000236.txt
+
+wm_clean_000160
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000240.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000240.txt
+
+wm_clean_000161
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000245.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000245.txt
+
+wm_clean_000162
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000246.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000246.txt
+
+wm_clean_000163
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000247.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000247.txt
+
+wm_clean_000164
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000248.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000248.txt
+
+wm_clean_000165
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000249.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000249.txt
+
+wm_clean_000166
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000250.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000250.txt
+
+wm_clean_000167
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000254.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000254.txt
+
+wm_clean_000168
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000255.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000255.txt
+
+wm_clean_000169
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000256.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000256.txt
+
+wm_clean_000170
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000258.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000258.txt
+
+wm_clean_000171
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000270.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000270.txt
+
+wm_clean_000172
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000271.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000271.txt
+
+wm_clean_000173
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000272.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000272.txt
+
+wm_clean_000174
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000273.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000273.txt
+
+wm_clean_000175
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000274.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000274.txt
+
+wm_clean_000176
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000275.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000275.txt
+
+wm_clean_000177
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000276.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000276.txt
+
+wm_clean_000178
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000277.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000277.txt
+
+wm_clean_000179
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000278.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000278.txt
+
+wm_clean_000180
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000279.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000279.txt
+
+wm_clean_000181
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000280.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000280.txt
+
+wm_clean_000182
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000281.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000281.txt
+
+wm_clean_000183
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000282.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000282.txt
+
+wm_clean_000184
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000283.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000283.txt
+
+wm_clean_000185
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000284.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000284.txt
+
+wm_clean_000186
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000286.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000286.txt
+
+wm_clean_000187
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000287.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000287.txt
+
+wm_clean_000188
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000288.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000288.txt
+
+wm_clean_000189
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000289.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000289.txt
+
+wm_clean_000190
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000290.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000290.txt
+
+wm_clean_000191
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000291.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000291.txt
+
+wm_clean_000192
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000292.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000292.txt
+
+wm_clean_000193
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000293.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000293.txt
+
+wm_clean_000194
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000294.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000294.txt
+
+wm_clean_000195
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000295.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000295.txt
+
+wm_clean_000196
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000296.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000296.txt
+
+wm_clean_000197
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000297.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000297.txt
+
+wm_clean_000198
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000298.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000298.txt
+
+wm_clean_000199
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000299.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000299.txt
+
+wm_clean_000200
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000300.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000300.txt
+
+wm_clean_000201
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000301.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000301.txt
+
+wm_clean_000202
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000302.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000302.txt
+
+wm_clean_000203
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000303.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000303.txt
+
+wm_clean_000204
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000314.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000314.txt
+
+wm_clean_000205
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000315.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000315.txt
+
+wm_clean_000206
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000322.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000322.txt
+
+wm_clean_000207
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000325.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000325.txt
+
+wm_clean_000208
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000327.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000327.txt
+
+wm_clean_000209
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000330.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000330.txt
+
+wm_clean_000210
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000339.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000339.txt
+
+wm_clean_000211
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000340.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000340.txt
+
+wm_clean_000212
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000341.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000341.txt
+
+wm_clean_000213
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000342.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000342.txt
+
+wm_clean_000214
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000343.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000343.txt
+
+wm_clean_000215
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000347.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000347.txt
+
+wm_clean_000216
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000348.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000348.txt
+
+wm_clean_000217
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000349.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000349.txt
+
+wm_clean_000218
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000357.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000357.txt
+
+wm_clean_000219
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000358.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000358.txt
+
+wm_clean_000220
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000359.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000359.txt
+
+wm_clean_000221
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000360.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000360.txt
+
+wm_clean_000222
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000361.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000361.txt
+
+wm_clean_000223
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000362.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000362.txt
+
+wm_clean_000224
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000363.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000363.txt
+
+wm_clean_000225
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000364.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000364.txt
+
+wm_clean_000226
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000366.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000366.txt
+
+wm_clean_000227
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000369.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000369.txt
+
+wm_clean_000228
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000371.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000371.txt
+
+wm_clean_000229
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000372.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000372.txt
+
+wm_clean_000230
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000373.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000373.txt
+
+wm_clean_000231
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000374.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000374.txt
+
+wm_clean_000232
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000375.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000375.txt
+
+wm_clean_000233
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000376.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000376.txt
+
+wm_clean_000234
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000377.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000377.txt
+
+wm_clean_000235
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000381.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000381.txt
+
+wm_clean_000236
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000391.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000391.txt
+
+wm_clean_000237
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000392.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000392.txt
+
+wm_clean_000238
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000393.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000393.txt
+
+wm_clean_000239
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000395.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000395.txt
+
+wm_clean_000240
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000396.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000396.txt
+
+wm_clean_000241
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000405.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000405.txt
+
+wm_clean_000242
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000406.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000406.txt
+
+wm_clean_000243
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000407.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000407.txt
+
+wm_clean_000244
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000408.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000408.txt
+
+wm_clean_000245
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000409.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000409.txt
+
+wm_clean_000246
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000410.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000410.txt
+
+wm_clean_000247
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000411.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000411.txt
+
+wm_clean_000248
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000412.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000412.txt
+
+wm_clean_000249
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000413.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000413.txt
+
+wm_clean_000250
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000415.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000415.txt
+
+wm_clean_000251
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000418.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000418.txt
+
+wm_clean_000252
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000422.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000422.txt
+
+wm_clean_000253
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000423.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000423.txt
+
+wm_clean_000254
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000424.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000424.txt
+
+wm_clean_000255
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000425.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000425.txt
+
+wm_clean_000256
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000426.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000426.txt
+
+wm_clean_000257
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000428.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000428.txt
+
+wm_clean_000258
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000429.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000429.txt
+
+wm_clean_000259
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000430.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000430.txt
+
+wm_clean_000260
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000431.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000431.txt
+
+wm_clean_000261
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000432.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000432.txt
+
+wm_clean_000262
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000433.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000433.txt
+
+wm_clean_000263
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000434.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000434.txt
+
+wm_clean_000264
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000435.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000435.txt
+
+wm_clean_000265
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000436.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000436.txt
+
+wm_clean_000266
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000437.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000437.txt
+
+wm_clean_000267
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000438.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000438.txt
+
+wm_clean_000268
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000439.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000439.txt
+
+wm_clean_000269
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000440.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000440.txt
+
+wm_clean_000270
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000442.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000442.txt
+
+wm_clean_000271
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000445.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000445.txt
+
+wm_clean_000272
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000446.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000446.txt
+
+wm_clean_000273
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000453.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000453.txt
+
+wm_clean_000274
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000454.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000454.txt
+
+wm_clean_000275
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000455.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000455.txt
+
+wm_clean_000276
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000456.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000456.txt
+
+wm_clean_000277
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000457.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000457.txt
+
+wm_clean_000278
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000458.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000458.txt
+
+wm_clean_000279
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000460.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000460.txt
+
+wm_clean_000280
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000473.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000473.txt
+
+wm_clean_000281
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000474.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000474.txt
+
+wm_clean_000282
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000475.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000475.txt
+
+wm_clean_000283
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000476.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000476.txt
+
+wm_clean_000284
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000477.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000477.txt
+
+wm_clean_000285
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000478.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000478.txt
+
+wm_clean_000286
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000479.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000479.txt
+
+wm_clean_000287
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000482.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000482.txt
+
+wm_clean_000288
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000483.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000483.txt
+
+wm_clean_000289
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000484.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000484.txt
+
+wm_clean_000290
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000485.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000485.txt
+
+wm_clean_000291
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000486.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000486.txt
+
+wm_clean_000292
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000487.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000487.txt
+
+wm_clean_000293
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000503.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000503.txt
+
+wm_clean_000294
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000504.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000504.txt
+
+wm_clean_000295
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000505.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000505.txt
+
+wm_clean_000296
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000506.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000506.txt
+
+wm_clean_000297
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000507.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000507.txt
+
+wm_clean_000298
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000508.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000508.txt
+
+wm_clean_000299
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000509.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000509.txt
+
+wm_clean_000300
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000510.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000510.txt
+
+wm_clean_000301
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000515.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000515.txt
+
+wm_clean_000302
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000516.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000516.txt
+
+wm_clean_000303
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000517.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000517.txt
+
+wm_clean_000304
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000518.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000518.txt
+
+wm_clean_000305
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000519.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000519.txt
+
+wm_clean_000306
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000520.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000520.txt
+
+wm_clean_000307
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000521.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000521.txt
+
+wm_clean_000308
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000522.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000522.txt
+
+wm_clean_000309
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000523.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000523.txt
+
+wm_clean_000310
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000524.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000524.txt
+
+wm_clean_000311
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000525.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000525.txt
+
+wm_clean_000312
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000527.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000527.txt
+
+wm_clean_000313
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000529.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000529.txt
+
+wm_clean_000314
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000530.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000530.txt
+
+wm_clean_000315
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000531.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000531.txt
+
+wm_clean_000316
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000532.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000532.txt
+
+wm_clean_000317
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000533.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000533.txt
+
+wm_clean_000318
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000534.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000534.txt
+
+wm_clean_000319
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000535.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000535.txt
+
+wm_clean_000320
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000536.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000536.txt
+
+wm_clean_000321
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000537.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000537.txt
+
+wm_clean_000322
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000538.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000538.txt
+
+wm_clean_000323
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000539.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000539.txt
+
+wm_clean_000324
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000540.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000540.txt
+
+wm_clean_000325
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000541.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000541.txt
+
+wm_clean_000326
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000542.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000542.txt
+
+wm_clean_000327
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000543.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000543.txt
+
+wm_clean_000328
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000545.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000545.txt
+
+wm_clean_000329
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000546.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000546.txt
+
+wm_clean_000330
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000547.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000547.txt
+
+wm_clean_000331
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000548.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000548.txt
+
+wm_clean_000332
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000549.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000549.txt
+
+wm_clean_000333
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000550.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000550.txt
+
+wm_clean_000334
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000551.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000551.txt
+
+wm_clean_000335
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000552.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000552.txt
+
+wm_clean_000336
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000553.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000553.txt
+
+wm_clean_000337
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000554.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000554.txt
+
+wm_clean_000338
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000555.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000555.txt
+
+wm_clean_000339
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000556.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000556.txt
+
+wm_clean_000340
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000557.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000557.txt
+
+wm_clean_000341
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000558.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000558.txt
+
+wm_clean_000342
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000559.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000559.txt
+
+wm_clean_000343
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000560.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000560.txt
+
+wm_clean_000344
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000561.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000561.txt
+
+wm_clean_000345
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000562.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000562.txt
+
+wm_clean_000346
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000563.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000563.txt
+
+wm_clean_000347
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000564.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000564.txt
+
+wm_clean_000348
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000565.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000565.txt
+
+wm_clean_000349
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000566.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000566.txt
+
+wm_clean_000350
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000567.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000567.txt
+
+wm_clean_000351
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000568.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000568.txt
+
+wm_clean_000352
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000569.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000569.txt
+
+wm_clean_000353
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000570.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000570.txt
+
+wm_clean_000354
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000571.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000571.txt
+
+wm_clean_000355
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000572.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000572.txt
+
+wm_clean_000356
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000573.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000573.txt
+
+wm_clean_000357
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000574.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000574.txt
+
+wm_clean_000358
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000575.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000575.txt
+
+wm_clean_000359
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000576.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000576.txt
+
+wm_clean_000360
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000577.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000577.txt
+
+wm_clean_000361
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000578.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000578.txt
+
+wm_clean_000362
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000579.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000579.txt
+
+wm_clean_000363
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000583.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000583.txt
+
+wm_clean_000364
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000594.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000594.txt
+
+wm_clean_000365
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000596.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000596.txt
+
+wm_clean_000366
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000597.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000597.txt
+
+wm_clean_000367
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000598.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000598.txt
+
+wm_clean_000368
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000599.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000599.txt
+
+wm_clean_000369
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000600.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000600.txt
+
+wm_clean_000370
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000601.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000601.txt
+
+wm_clean_000371
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000602.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000602.txt
+
+wm_clean_000372
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000603.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000603.txt
+
+wm_clean_000373
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000604.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000604.txt
+
+wm_clean_000374
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000605.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000605.txt
+
+wm_clean_000375
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000606.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000606.txt
+
+wm_clean_000376
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000607.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000607.txt
+
+wm_clean_000377
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000608.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000608.txt
+
+wm_clean_000378
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000609.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000609.txt
+
+wm_clean_000379
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000610.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000610.txt
+
+wm_clean_000380
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000614.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000614.txt
+
+wm_clean_000381
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000616.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000616.txt
+
+wm_clean_000382
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000617.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000617.txt
+
+wm_clean_000383
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000619.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000619.txt
+
+wm_clean_000384
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000630.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000630.txt
+
+wm_clean_000385
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000631.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000631.txt
+
+wm_clean_000386
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000633.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000633.txt
+
+wm_clean_000387
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000634.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000634.txt
+
+wm_clean_000388
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000635.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000635.txt
+
+wm_clean_000389
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000636.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000636.txt
+
+wm_clean_000390
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000637.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000637.txt
+
+wm_clean_000391
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000638.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000638.txt
+
+wm_clean_000392
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000648.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000648.txt
+
+wm_clean_000393
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000649.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000649.txt
+
+wm_clean_000394
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000650.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000650.txt
+
+wm_clean_000395
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000651.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000651.txt
+
+wm_clean_000396
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000652.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000652.txt
+
+wm_clean_000397
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000653.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000653.txt
+
+wm_clean_000398
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000654.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000654.txt
+
+wm_clean_000399
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000655.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000655.txt
+
+wm_clean_000400
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000656.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000656.txt
+
+wm_clean_000401
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000657.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000657.txt
+
+wm_clean_000402
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000658.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000658.txt
+
+wm_clean_000403
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000659.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000659.txt
+
+wm_clean_000404
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000660.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000660.txt
+
+wm_clean_000405
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000661.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000661.txt
+
+wm_clean_000406
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000662.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000662.txt
+
+wm_clean_000407
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000663.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000663.txt
+
+wm_clean_000408
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000664.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000664.txt
+
+wm_clean_000409
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000667.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000667.txt
+
+wm_clean_000410
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000669.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000669.txt
+
+wm_clean_000411
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000671.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000671.txt
+
+wm_clean_000412
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000672.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000672.txt
+
+wm_clean_000413
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000673.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000673.txt
+
+wm_clean_000414
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000674.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000674.txt
+
+wm_clean_000415
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000675.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000675.txt
+
+wm_clean_000416
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000676.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000676.txt
+
+wm_clean_000417
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000677.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000677.txt
+
+wm_clean_000418
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000678.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000678.txt
+
+wm_clean_000419
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000679.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000679.txt
+
+wm_clean_000420
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000680.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000680.txt
+
+wm_clean_000421
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000681.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000681.txt
+
+wm_clean_000422
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000682.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000682.txt
+
+wm_clean_000423
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000683.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000683.txt
+
+wm_clean_000424
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000689.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000689.txt
+
+wm_clean_000425
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000709.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000709.txt
+
+wm_clean_000426
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000711.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000711.txt
+
+wm_clean_000427
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000712.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000712.txt
+
+wm_clean_000428
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000713.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000713.txt
+
+wm_clean_000429
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000714.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000714.txt
+
+wm_clean_000430
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000715.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000715.txt
+
+wm_clean_000431
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000724.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000724.txt
+
+wm_clean_000432
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000725.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000725.txt
+
+wm_clean_000433
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000726.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000726.txt
+
+wm_clean_000434
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000727.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000727.txt
+
+wm_clean_000435
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000728.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000728.txt
+
+wm_clean_000436
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000729.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000729.txt
+
+wm_clean_000437
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000732.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000732.txt
+
+wm_clean_000438
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000736.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000736.txt
+
+wm_clean_000439
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000737.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000737.txt
+
+wm_clean_000440
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000739.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000739.txt
+
+wm_clean_000441
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000741.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000741.txt
+
+wm_clean_000442
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000742.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000742.txt
+
+wm_clean_000443
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000743.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000743.txt
+
+wm_clean_000444
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000744.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000744.txt
+
+wm_clean_000445
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000745.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000745.txt
+
+wm_clean_000446
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000746.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000746.txt
+
+wm_clean_000447
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000747.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000747.txt
+
+wm_clean_000448
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000751.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000751.txt
+
+wm_clean_000449
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000758.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000758.txt
+
+wm_clean_000450
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000767.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000767.txt
+
+wm_clean_000451
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000771.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000771.txt
+
+wm_clean_000452
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000772.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000772.txt
+
+wm_clean_000453
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000773.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000773.txt
+
+wm_clean_000454
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000774.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000774.txt
+
+wm_clean_000455
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000789.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000789.txt
+
+wm_clean_000456
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000790.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000790.txt
+
+wm_clean_000457
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000791.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000791.txt
+
+wm_clean_000458
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000792.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000792.txt
+
+wm_clean_000459
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000793.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000793.txt
+
+wm_clean_000460
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000794.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000794.txt
+
+wm_clean_000461
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000795.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000795.txt
+
+wm_clean_000462
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000796.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000796.txt
+
+wm_clean_000463
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000798.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000798.txt
+
+wm_clean_000464
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000799.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000799.txt
+
+wm_clean_000465
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000800.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000800.txt
+
+wm_clean_000466
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000801.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000801.txt
+
+wm_clean_000467
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000802.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000802.txt
+
+wm_clean_000468
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000803.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000803.txt
+
+wm_clean_000469
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000804.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000804.txt
+
+wm_clean_000470
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000805.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000805.txt
+
+wm_clean_000471
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000809.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000809.txt
+
+wm_clean_000472
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000810.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000810.txt
+
+wm_clean_000473
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000811.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000811.txt
+
+wm_clean_000474
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000812.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000812.txt
+
+wm_clean_000475
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000813.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000813.txt
+
+wm_clean_000476
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000814.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000814.txt
+
+wm_clean_000477
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000815.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000815.txt
+
+wm_clean_000478
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000816.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000816.txt
+
+wm_clean_000479
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000817.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000817.txt
+
+wm_clean_000480
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000818.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000818.txt
+
+wm_clean_000481
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000819.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000819.txt
+
+wm_clean_000482
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000820.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000820.txt
+
+wm_clean_000483
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000821.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000821.txt
+
+wm_clean_000484
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000822.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000822.txt
+
+wm_clean_000485
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000823.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000823.txt
+
+wm_clean_000486
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000824.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000824.txt
+
+wm_clean_000487
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000826.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000826.txt
+
+wm_clean_000488
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000827.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000827.txt
+
+wm_clean_000489
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000828.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000828.txt
+
+wm_clean_000490
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000829.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000829.txt
+
+wm_clean_000491
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000830.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000830.txt
+
+wm_clean_000492
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000831.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000831.txt
+
+wm_clean_000493
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000832.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000832.txt
+
+wm_clean_000494
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000833.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000833.txt
+
+wm_clean_000495
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000834.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000834.txt
+
+wm_clean_000496
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000835.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000835.txt
+
+wm_clean_000497
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000836.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000836.txt
+
+wm_clean_000498
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000837.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000837.txt
+
+wm_clean_000499
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000847.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000847.txt
+
+wm_clean_000500
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000848.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000848.txt
+
+wm_clean_000501
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000849.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000849.txt
+
+wm_clean_000502
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000850.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000850.txt
+
+wm_clean_000503
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000851.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000851.txt
+
+wm_clean_000504
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000852.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000852.txt
+
+wm_clean_000505
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000853.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000853.txt
+
+wm_clean_000506
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000854.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000854.txt
+
+wm_clean_000507
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000855.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000855.txt
+
+wm_clean_000508
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000856.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000856.txt
+
+wm_clean_000509
+  image_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/images/water_meter_000857.jpg
+  label_from: /content/drive/MyDrive/Colab Notebooks/Rwanda Water-meter-system/raw_dataset/labels/water_meter_000857.txt
