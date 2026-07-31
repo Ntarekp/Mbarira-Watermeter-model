@@ -25,6 +25,7 @@ STAGE2_CONF = 0.35
 STAGE2_IOU = 0.45
 
 ROW_GAP_FRAC = 0.9   # gap (x median digit height) that starts a new row
+
 SPAN_OVERLAP_THRESH = 0.4
 
 # Optional: purely a UI heads-up, never trims/pads the actual reading.
@@ -371,10 +372,6 @@ st.markdown(BASE_CSS, unsafe_allow_html=True)
 
 
 def render_navbar(active="Demo"):
-    """Real, clickable navigation. The only page that is NOT a link is the
-    one you're currently on (a self-link is a no-op and was also the one
-    combination that crashed Streamlit's page registry). Every other page
-    link is a genuine st.page_link -- no silent fallback, no downgrade."""
     st.markdown(
         '<div class="mb-navbar"><span class="brand">Mbarira AI</span></div>',
         unsafe_allow_html=True,
@@ -385,12 +382,12 @@ def render_navbar(active="Demo"):
         if active == "Demo":
             st.markdown('<span class="current">Demo</span>', unsafe_allow_html=True)
         else:
-            st.page_link("app.py", label="Demo", icon="🏠")
+            st.page_link("app.py", label="Demo", icon="\U0001F3E0")
     with nav_cols[1]:
         if active == "Documentation":
             st.markdown('<span class="current">Documentation</span>', unsafe_allow_html=True)
         else:
-            st.page_link("pages/1_📄_Documentation.py", label="Documentation", icon="📄")
+            st.page_link("pages/1_\U0001F4C4_Documentation.py", label="Documentation", icon="\U0001F4C4")
     st.markdown('</div>', unsafe_allow_html=True)
 
 
@@ -407,7 +404,11 @@ def load_models():
     return YOLO(str(STAGE1_PATH)), YOLO(str(STAGE2_PATH))
 
 
-def find_window_box(result):
+def find_window_obb(result):
+    """Returns the 4-corner polygon (numpy array, shape (4,2)) of the
+    largest 'window' detection, or None. Unlike a plain axis-aligned box,
+    this keeps the meter's actual rotation -- which is what lets us
+    deskew the crop instead of just cropping around a tilted region."""
     if result.obb is None or len(result.obb) == 0:
         return None
     names = result.names
@@ -421,16 +422,42 @@ def find_window_box(result):
         x1, y1 = pts[:, 0].max(), pts[:, 1].max()
         area = (x1 - x0) * (y1 - y0)
         if area > best_area:
-            best_area, best = area, (x0, y0, x1, y1)
+            best_area, best = area, pts
     return best
 
 
-def pad_clip(box, w, h, pad_frac):
-    x0, y0, x1, y1 = box
-    bw, bh = x1 - x0, y1 - y0
-    px, py = bw * pad_frac, bh * pad_frac
-    return (max(0, int(x0 - px)), max(0, int(y0 - py)),
-            min(w, int(x1 + px)), min(h, int(y1 + py)))
+def deskew_window(img, poly, pad_frac=CROP_PAD):
+    """Rotates the FULL image so the digit window's long axis is
+    horizontal, then crops it. This is what fixes reversed readings:
+    sorting digits by x-position only means "left to right" if the crop's
+    x-axis actually runs along the digit row -- an un-deskewed tilted
+    crop does not guarantee that.
+
+    Rotation is normalized to the box's LONGER side, keeping it within
+    roughly +/-45 degrees of the original for a typical handheld tilt --
+    i.e. it straightens the row without flipping it upside-down. (A full
+    180-degree upside-down photo is a separate, harder problem geometry
+    alone can't resolve.)
+    """
+    rect = cv2.minAreaRect(poly.astype(np.float32))
+    (cx, cy), (w, h), angle = rect
+
+    if w < h:
+        w, h = h, w
+        angle += 90.0
+
+    h_img, w_img = img.shape[:2]
+    M = cv2.getRotationMatrix2D((cx, cy), angle, 1.0)
+    rotated = cv2.warpAffine(
+        img, M, (w_img, h_img), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE
+    )
+
+    pw, ph = w * (1 + pad_frac), h * (1 + pad_frac)
+    x0 = int(max(0, cx - pw / 2))
+    y0 = int(max(0, cy - ph / 2))
+    x1 = int(min(w_img, cx + pw / 2))
+    y1 = int(min(h_img, cy + ph / 2))
+    return rotated[y0:y1, x0:x1]
 
 
 def letterbox(img, target):
@@ -466,32 +493,15 @@ def _spans_overlap(a, b, overlap_frac=SPAN_OVERLAP_THRESH):
     return union > 0 and (inter / union) > overlap_frac
 
 
-def _fit_row_line(centers):
-    """Fit a line through the digit-box centers with SVD (total least
-    squares) instead of assuming the row is horizontal, so a tilted photo
-    doesn't get its real digits mis-filtered as off-row or duplicates."""
-    pts = np.array(centers, dtype=float)
-    origin = pts.mean(axis=0)
-    centered = pts - origin
-    _, _, vt = np.linalg.svd(centered)
-    direction = vt[0] / np.linalg.norm(vt[0])
-    perp = np.array([-direction[1], direction[0]])
-    return origin, direction, perp
-
-
-def _cluster_rows(perp_d, median_h, gap_frac=ROW_GAP_FRAC):
-    """Group candidate boxes into rows by clustering their (signed)
-    perpendicular offset from the fitted reference line. A gap bigger than
-    gap_frac * median_h between consecutive offsets starts a new row. This
-    is what lets a meter with a genuine second row -- e.g. a red
-    sub-counter dial next to the main black digit wheels -- be recognized
-    as a second row of real digits, instead of everything off the single
-    fitted line being discarded as noise."""
-    order = np.argsort(perp_d)
-    sorted_d = perp_d[order]
+def _cluster_rows(y_vals, median_h, gap_frac=ROW_GAP_FRAC):
+    """Group candidate boxes into rows by clustering their y-coordinate.
+    Operates on plain y because the crop is deskewed upright before this
+    ever runs -- no line-fitting or direction-sign guessing needed."""
+    order = np.argsort(y_vals)
+    sorted_y = y_vals[order]
     groups = [[int(order[0])]]
     for i in range(1, len(order)):
-        if sorted_d[i] - sorted_d[i - 1] > gap_frac * median_h:
+        if sorted_y[i] - sorted_y[i - 1] > gap_frac * median_h:
             groups.append([int(order[i])])
         else:
             groups[-1].append(int(order[i]))
@@ -499,14 +509,9 @@ def _cluster_rows(perp_d, median_h, gap_frac=ROW_GAP_FRAC):
 
 
 def clean_digit_detections(xyxyxyxy, cls_ids, confs):
-    """Returns (kept, discarded). `kept` becomes the reading, ordered as:
-    the main row (the cluster with the most detections) left-to-right,
-    followed by any secondary row(s) -- e.g. a red sub-counter dial --
-    also left-to-right. A box is discarded ONLY if it's a true duplicate:
-    another box on the same physical slot within the same row. A box is
-    never discarded just for sitting in a different row than the majority
-    -- multi-row meters are real, and treating a second row as noise
-    silently drops genuine digits."""
+    """Returns (kept, discarded). Because the crop is already deskewed to
+    upright, left-to-right always means increasing x -- no direction
+    ambiguity left to get wrong."""
     if len(cls_ids) == 0:
         return [], []
 
@@ -517,30 +522,20 @@ def clean_digit_detections(xyxyxyxy, cls_ids, confs):
         candidates.append({
             "poly": pts, "cx": cx, "cy": cy, "h": h, "span": span,
             "label": label, "conf": float(conf), "reason": None,
+            "t_span": (float(pts[:, 0].min()), float(pts[:, 0].max())),
+            "t": cx,
         })
 
     if len(candidates) == 1:
         return candidates, []
 
-    origin, direction, perp = _fit_row_line([(c["cx"], c["cy"]) for c in candidates])
-
     heights = np.array([c["h"] for c in candidates])
     median_h = float(np.median(heights)) or 1.0
+    cy_vals = np.array([c["cy"] for c in candidates])
 
-    perp_d = np.array([
-        (c["cx"] - origin[0]) * perp[0] + (c["cy"] - origin[1]) * perp[1]
-        for c in candidates
-    ])
-
-    row_groups = _cluster_rows(perp_d, median_h)
-    # Main row = whichever cluster has the most digits; ties broken by
-    # closeness to the fitted reference line.
-    row_groups.sort(key=lambda g: (-len(g), min(abs(perp_d[i]) for i in g)))
-
-    for c in candidates:
-        proj = (c["poly"][:, 0] - origin[0]) * direction[0] + (c["poly"][:, 1] - origin[1]) * direction[1]
-        c["t_span"] = (float(proj.min()), float(proj.max()))
-        c["t"] = float((proj.min() + proj.max()) / 2)
+    row_groups = _cluster_rows(cy_vals, median_h)
+    median_cy = float(np.median(cy_vals))
+    row_groups.sort(key=lambda g: (-len(g), min(abs(cy_vals[i] - median_cy) for i in g)))
 
     kept, discarded = [], []
     for group in row_groups:
@@ -560,10 +555,6 @@ def clean_digit_detections(xyxyxyxy, cls_ids, confs):
 
 
 def draw_digit_boxes(canvas_bgr, kept, discarded, show_discarded=False):
-    """Draws ONLY the boxes that made it into the final reading (green),
-    so the box count always equals the reading length. If show_discarded
-    is on, filtered-out boxes are also drawn in gray with an 'x' prefix
-    and the reason, for auditing -- never shown by default."""
     img = canvas_bgr.copy()
 
     if show_discarded:
@@ -589,15 +580,14 @@ def draw_digit_boxes(canvas_bgr, kept, discarded, show_discarded=False):
 def read_meter(image, stage1_model, stage2_model):
     timings = {}
     img = np.array(image.convert("RGB"))[:, :, ::-1].copy()
-    h, w = img.shape[:2]
 
     t0 = time.time()
     r1 = stage1_model.predict(img, imgsz=640, conf=0.25, verbose=False)[0]
     timings["detect_meter"] = time.time() - t0
     annotated_full = Image.fromarray(r1.plot()[:, :, ::-1])
 
-    window_box = find_window_box(r1)
-    if window_box is None:
+    window_poly = find_window_obb(r1)
+    if window_poly is None:
         return {
             "annotated_full": annotated_full, "crop_canvas": None,
             "kept_digits": [], "discarded_digits": [],
@@ -606,8 +596,7 @@ def read_meter(image, stage1_model, stage2_model):
             "table": None, "reading": None, "timings": timings,
         }
 
-    x0, y0, x1, y1 = pad_clip(window_box, w, h, CROP_PAD)
-    crop = img[y0:y1, x0:x1]
+    crop = deskew_window(img, window_poly, CROP_PAD)
     if crop.size == 0:
         return {
             "annotated_full": annotated_full, "crop_canvas": None,
@@ -683,7 +672,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-st.page_link("pages/1_📄_Documentation.py", label="📄  View Documentation", icon=None)
+st.page_link("pages/1_\U0001F4C4_Documentation.py", label="\U0001F4C4  View Documentation", icon=None)
 st.write("")
 
 with st.spinner("Loading models..."):
@@ -758,7 +747,7 @@ with col_preview:
                 unsafe_allow_html=True,
             )
             if result["crop_canvas"] is not None:
-                st.markdown('<p class="mb-label-caps" style="margin-top:14px;">Cropped digit window</p>', unsafe_allow_html=True)
+                st.markdown('<p class="mb-label-caps" style="margin-top:14px;">Cropped digit window (deskewed)</p>', unsafe_allow_html=True)
                 annotated_crop = draw_digit_boxes(
                     result["crop_canvas"], result["kept_digits"], result["discarded_digits"],
                     show_discarded=show_discarded,
