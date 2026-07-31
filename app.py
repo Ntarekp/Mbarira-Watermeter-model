@@ -11,8 +11,6 @@ import streamlit as st
 from PIL import Image
 from ultralytics import YOLO
 
-from theme import COLORS, BASE_CSS, render_navbar
-
 st.set_page_config(page_title="Mbarira AI - Water Meter Reading", page_icon="\U0001F4A7", layout="wide")
 
 APP_DIR = Path(__file__).parent
@@ -33,7 +31,341 @@ SPAN_OVERLAP_THRESH = 0.4
 # Optional: purely a UI heads-up, never trims/pads the actual reading.
 EXPECTED_DIGITS = None  # e.g. 8
 
+COLORS = {
+    "primary": "#00543b",
+    "primary_container": "#0b6e4f",
+    "on_primary_container": "#98edc6",
+    "secondary": "#006781",
+    "secondary_container": "#8fdfff",
+    "on_secondary_container": "#00647d",
+    "tertiary_container": "#974946",
+    "background": "#f8f9ff",
+    "surface": "#f8f9ff",
+    "surface_container_lowest": "#ffffff",
+    "surface_container_low": "#eff4ff",
+    "surface_container": "#e5eeff",
+    "surface_bright": "#f8f9ff",
+    "on_surface": "#0b1c30",
+    "on_surface_variant": "#3f4943",
+    "outline": "#6f7a73",
+    "outline_variant": "#bec9c1",
+    "accent": "#0E7490",
+    "error": "#ba1a1a",
+}
+
+BASE_CSS = f"""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600&family=Sora:wght@700&display=swap');
+
+:root {{
+    color-scheme: light !important;
+}}
+html, body,
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+[data-testid="stHeader"],
+[data-testid="stToolbar"],
+[class*="css"] {{
+    font-family: 'Inter', sans-serif !important;
+    background-color: {COLORS["background"]} !important;
+    color: {COLORS["on_surface"]} !important;
+}}
+[data-testid="stHeader"] {{
+    background-color: transparent !important;
+}}
+[data-testid="stSidebar"] {{
+    background-color: {COLORS["surface_container_low"]} !important;
+}}
+
+.block-container {{
+    padding-top: 1.5rem;
+    max-width: 1280px;
+}}
+
+#MainMenu, footer {{visibility: hidden;}}
+
+.mb-navbar {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 4px 20px 4px;
+    border-bottom: 1px solid {COLORS["outline_variant"]}55;
+    margin-bottom: 24px;
+}}
+.mb-navbar .brand {{
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: {COLORS["on_surface"]} !important;
+}}
+.mb-navbar .links a {{
+    color: {COLORS["on_surface_variant"]} !important;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 15px;
+}}
+.mb-navbar .links a.active {{
+    color: {COLORS["primary"]} !important;
+    font-weight: 700;
+    border-bottom: 2px solid {COLORS["primary"]};
+    padding-bottom: 4px;
+}}
+
+.mb-header h1 {{
+    font-family: 'Sora', sans-serif;
+    font-size: 40px;
+    line-height: 1.15;
+    margin-bottom: 4px;
+    color: {COLORS["on_surface"]} !important;
+}}
+.mb-header p {{
+    font-size: 17px;
+    color: {COLORS["on_surface_variant"]} !important;
+    max-width: 640px;
+}}
+
+[data-testid="stVerticalBlockBorderWrapper"] {{
+    background: {COLORS["surface_container_lowest"]} !important;
+    border: 1px solid {COLORS["outline_variant"]} !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 2px rgba(15,23,42,0.03);
+}}
+[data-testid="stVerticalBlockBorderWrapper"] * {{
+    color: {COLORS["on_surface"]};
+}}
+.mb-card-title {{
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: {COLORS["on_surface"]} !important;
+}}
+
+.mb-badge {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background: {COLORS["secondary_container"]}33;
+    color: {COLORS["on_secondary_container"]};
+    padding: 4px 12px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}}
+.mb-badge .dot {{
+    width: 8px; height: 8px; border-radius: 999px;
+    background: {COLORS["primary"]};
+    animation: mb-pulse 1.4s infinite;
+}}
+@keyframes mb-pulse {{
+    0%, 100% {{ opacity: 1; }}
+    50% {{ opacity: 0.3; }}
+}}
+
+[data-testid="stFileUploaderDropzone"] {{
+    background: transparent !important;
+    border: 2px dashed {COLORS["outline_variant"]} !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+}}
+[data-testid="stFileUploaderDropzone"]:hover {{
+    border-color: {COLORS["accent"]} !important;
+}}
+
+.mb-preview-frame {{
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    background: {COLORS["surface_container_low"]};
+    border: 1px solid {COLORS["outline_variant"]};
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}}
+.mb-preview-frame img {{
+    width: 100%;
+    height: auto;
+    display: block;
+}}
+.mb-preview-empty {{
+    color: {COLORS["on_surface_variant"]};
+    font-size: 14px;
+    text-align: center;
+    padding: 32px;
+}}
+
+.mb-scanline {{
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, {COLORS["accent"]}, transparent);
+    box-shadow: 0 0 10px {COLORS["accent"]}, 0 0 20px {COLORS["accent"]};
+    animation: mb-scan 2.2s infinite linear;
+    opacity: 0.85;
+}}
+@keyframes mb-scan {{
+    0% {{ top: 0%; opacity: 0; }}
+    10% {{ opacity: 1; }}
+    90% {{ opacity: 1; }}
+    100% {{ top: 100%; opacity: 0; }}
+}}
+
+.mb-label-caps {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: {COLORS["on_surface_variant"]};
+    margin-bottom: 6px;
+}}
+
+.mb-reading-box {{
+    background: {COLORS["surface_container"]};
+    border: 1px solid {COLORS["outline_variant"]}88;
+    border-radius: 10px;
+    padding: 16px;
+}}
+.mb-reading-box .value {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: {COLORS["on_surface"]};
+}}
+.mb-reading-box.warn {{
+    border-color: {COLORS["error"]}55;
+}}
+.mb-reading-box.warn .value {{
+    color: {COLORS["error"]};
+}}
+
+.mb-metric-card {{
+    border: 1px solid {COLORS["outline_variant"]}55;
+    border-radius: 10px;
+    padding: 12px;
+    background: {COLORS["surface_bright"]};
+}}
+.mb-confbars {{
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 32px;
+    margin-bottom: 6px;
+}}
+.mb-confbars .bar {{
+    flex: 1;
+    background: {COLORS["primary_container"]};
+    border-radius: 2px 2px 0 0;
+}}
+.mb-conf-footer {{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: {COLORS["on_surface_variant"]};
+}}
+
+.mb-timeline {{
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+    border-left: 1px solid {COLORS["outline_variant"]};
+}}
+.mb-timeline li {{
+    position: relative;
+    padding-bottom: 16px;
+}}
+.mb-timeline li:last-child {{
+    padding-bottom: 0;
+    color: {COLORS["primary_container"]};
+}}
+.mb-timeline li::before {{
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: {COLORS["primary_container"]};
+}}
+.mb-timeline .step-title {{
+    font-size: 13px;
+    font-weight: 600;
+    color: {COLORS["on_surface"]};
+}}
+.mb-timeline .step-meta {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: {COLORS["on_surface_variant"]};
+}}
+
+.mb-footer {{
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid {COLORS["outline_variant"]};
+    font-size: 12px;
+    color: {COLORS["on_surface_variant"]};
+    text-align: center;
+}}
+
+div.stButton > button {{
+    border-radius: 8px;
+    font-weight: 500;
+}}
+div.stButton > button[kind="primary"] {{
+    background-color: {COLORS["primary_container"]};
+    border-color: {COLORS["primary_container"]};
+}}
+
+div[data-testid="stRadio"] > div {{
+    display: flex;
+    gap: 6px;
+    background: {COLORS["surface_container_low"]};
+    padding: 4px;
+    border-radius: 8px;
+}}
+div[data-testid="stRadio"] label {{
+    flex: 1;
+    justify-content: center;
+    background: transparent;
+    border-radius: 6px;
+    padding: 6px 10px !important;
+    margin: 0 !important;
+    cursor: pointer;
+}}
+div[data-testid="stRadio"] label:has(input:checked) {{
+    background: {COLORS["surface_container_lowest"]};
+    box-shadow: 0 1px 2px rgba(15,23,42,0.08);
+}}
+div[data-testid="stRadio"] input {{
+    display: none;
+}}
+</style>
+"""
+
 st.markdown(BASE_CSS, unsafe_allow_html=True)
+
+
+def render_navbar(active="Demo"):
+    links = ["Demo", "Documentation"]
+    html_links = "".join(
+        f'<a href="#" class="{"active" if link == active else ""}">{link}</a>'
+        for link in links
+    )
+    return f"""
+    <div class="mb-navbar">
+        <span class="brand">Mbarira AI</span>
+        <div class="links">{html_links}</div>
+    </div>
+    """
 
 
 @st.cache_resource
@@ -92,9 +424,6 @@ def pil_to_b64(img: Image.Image) -> str:
     return base64.b64encode(buf.getvalue()).decode("utf-8")
 
 
-# ---------------------------------------------------------------------------
-# Digit-detection cleanup
-# ---------------------------------------------------------------------------
 def _box_geometry(pts):
     cx = pts[:, 0].mean()
     cy = pts[:, 1].mean()
@@ -112,14 +441,12 @@ def _spans_overlap(a, b, overlap_frac=SPAN_OVERLAP_THRESH):
 
 
 def clean_digit_detections(xyxyxyxy, cls_ids, confs):
-    """Returns (kept, discarded) -- both lists of dicts with poly/label/conf/
-    geometry. `kept` is what becomes the actual reading. `discarded` is kept
-    around purely so the UI can optionally show what got filtered and why,
-    for auditing -- it is never used to build the reading itself.
-
-    Filtering uses only the geometry of what the model detected (median
-    height/position of the row, and physical-slot overlap) -- never a fixed
-    digit count, so genuine repeats like "00" pass straight through."""
+    """Returns (kept, discarded). `kept` becomes the reading. `discarded` is
+    kept only so the UI can optionally show what was filtered and why, for
+    auditing -- it never affects the reading. Filtering uses only the
+    geometry of what the model detected (row height/position, physical-slot
+    overlap) -- never a fixed digit count, so genuine repeats like "00"
+    pass straight through untouched."""
     if len(cls_ids) == 0:
         return [], []
 
@@ -167,9 +494,9 @@ def clean_digit_detections(xyxyxyxy, cls_ids, confs):
 
 def draw_digit_boxes(canvas_bgr, kept, discarded, show_discarded=False):
     """Draws ONLY the boxes that made it into the final reading (green),
-    matching the digit count exactly. If show_discarded=True, also draws
-    filtered-out boxes in gray with an 'x' prefix and the reason, for
-    debugging/auditing -- never shown by default."""
+    so the box count always equals the reading length. If show_discarded
+    is on, filtered-out boxes are also drawn in gray with an 'x' prefix
+    and the reason, for auditing -- never shown by default."""
     img = canvas_bgr.copy()
 
     if show_discarded:
@@ -277,7 +604,6 @@ def read_meter(image, stage1_model, stage2_model):
     }
 
 
-# ---------------------------------------------------------------------------
 st.markdown(render_navbar("Demo"), unsafe_allow_html=True)
 
 st.markdown(
