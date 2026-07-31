@@ -371,22 +371,13 @@ div[data-testid="stRadio"] input {{
 st.markdown(BASE_CSS, unsafe_allow_html=True)
 
 
-def safe_page_link(page, label, icon=None):
-    """st.page_link()/st.switch_page() rely on Streamlit's internal page
-    registry, which has proven unreliable on this deployment (KeyError on
-    'url_pathname'). Never let a navigation nicety take the whole app down --
-    fall back to a plain caption pointing at the sidebar, which Streamlit
-    always populates automatically from the pages/ folder regardless of
-    this bug."""
-    try:
-        st.page_link(page, label=label, icon=icon)
-    except Exception:
-        st.caption(f"➜ {label} -- use the page list in the sidebar (top-left ⌃).")
-
-
 def render_navbar(active="Demo"):
+    """Real, clickable navigation. The only page that is NOT a link is the
+    one you're currently on (a self-link is a no-op and was also the one
+    combination that crashed Streamlit's page registry). Every other page
+    link is a genuine st.page_link -- no silent fallback, no downgrade."""
     st.markdown(
-        f'<div class="mb-navbar"><span class="brand">Mbarira AI</span></div>',
+        '<div class="mb-navbar"><span class="brand">Mbarira AI</span></div>',
         unsafe_allow_html=True,
     )
     st.markdown('<div class="mb-navlinks">', unsafe_allow_html=True)
@@ -395,12 +386,12 @@ def render_navbar(active="Demo"):
         if active == "Demo":
             st.markdown('<span class="current">Demo</span>', unsafe_allow_html=True)
         else:
-            safe_page_link("app.py", "Demo", icon="🏠")
+            st.page_link("app.py", label="Demo", icon="🏠")
     with nav_cols[1]:
         if active == "Documentation":
             st.markdown('<span class="current">Documentation</span>', unsafe_allow_html=True)
         else:
-            safe_page_link("pages/1_📄_Documentation.py", "Documentation", icon="📄")
+            st.page_link("pages/1_📄_Documentation.py", label="Documentation", icon="📄")
     st.markdown('</div>', unsafe_allow_html=True)
 
 
@@ -679,7 +670,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-safe_page_link("pages/1_📄_Documentation.py", "📄  View Documentation")
+st.page_link("pages/1_📄_Documentation.py", label="📄  View Documentation", icon=None)
 st.write("")
 
 with st.spinner("Loading models..."):

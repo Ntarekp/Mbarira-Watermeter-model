@@ -119,18 +119,11 @@ html, body,
 st.markdown(BASE_CSS, unsafe_allow_html=True)
 
 
-def safe_page_link(page, label, icon=None):
-    try:
-        st.page_link(page, label=label, icon=icon)
-    except Exception:
-        st.caption(f"➜ {label} -- use the page list in the sidebar (top-left ⌃).")
-
-
 st.markdown('<div class="mb-navbar"><span class="brand">Mbarira AI</span></div>', unsafe_allow_html=True)
 st.markdown('<div class="mb-navlinks">', unsafe_allow_html=True)
 nav_cols = st.columns([1, 1, 8])
 with nav_cols[0]:
-    safe_page_link("app.py", "Demo", icon="🏠")
+    st.page_link("app.py", label="Demo", icon="🏠")
 with nav_cols[1]:
     st.markdown('<span class="current">Documentation</span>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
