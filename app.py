@@ -68,8 +68,18 @@ html, body,
     color: {COLORS["on_surface"]} !important;
 }}
 [data-testid="stHeader"] {{ background-color: transparent !important; }}
-[data-testid="stSidebarNav"] {{ display: none !important; }}
-.block-container {{ padding-top: 1.5rem; max-width: 1280px; }}
+[data-testid="stSidebar"] {{ background-color: {COLORS["surface_container_low"]} !important; }}
+
+/* Extra top + right clearance so our own nav never renders underneath
+   Streamlit Community Cloud's own floating toolbar (Share / Star / Edit /
+   GitHub) -- that toolbar is platform chrome outside our app's DOM, so it
+   can't be hidden from here; the fix is just not putting our content in
+   the same screen region. */
+.block-container {{
+    padding-top: 3.5rem !important;
+    padding-right: 2rem !important;
+    max-width: 1280px;
+}}
 #MainMenu, footer {{visibility: hidden;}}
 
 /* -- Top navbar: brand left, real page_link nav right, divider below -- */
@@ -77,6 +87,7 @@ html, body,
     display: flex;
     align-items: center;
     padding-top: 4px;
+    margin-top: 4px;
 }}
 .mb-brand {{
     font-family: 'Sora', sans-serif;
@@ -279,16 +290,15 @@ def inject_css():
 
 def render_topnav(active):
     """Brand on the left, real working page_link navigation clustered to
-    the right, divider line below -- matches the original single-page
-    navbar look, but every link is a genuine st.page_link (clicking it
-    actually navigates), and icons are Material Symbols, not emoji."""
+    the right, divider line below. Coexists with Streamlit's own sidebar
+    nav -- this is a second, additional way to navigate, not a replacement."""
     nav_items = [
         ("Home", home_page, ":material/home:"),
         ("Demo", demo_page, ":material/science:"),
         ("Technology", tech_page, ":material/memory:"),
         ("Documentation", docs_page, ":material/description:"),
     ]
-    cols = st.columns([2, 3, 1, 1, 1, 1])
+    cols = st.columns([2, 2, 1, 1, 1, 1])
     with cols[0]:
         st.markdown('<span class="mb-brand">Mbarira AI</span>', unsafe_allow_html=True)
     # cols[1] is an empty spacer, pushing the links toward the right edge
@@ -1095,7 +1105,8 @@ demo_page = st.Page(render_demo, title="Demo", icon=":material/science:")
 tech_page = st.Page(render_technology, title="Technology", icon=":material/memory:")
 docs_page = st.Page(render_documentation, title="Documentation", icon=":material/description:")
 
-# position="hidden" turns off Streamlit's automatic sidebar page list --
-# navigation now happens entirely through the custom top bar (render_topnav)
-pg = st.navigation([home_page, demo_page, tech_page, docs_page], position="hidden")
+# No position= argument -> defaults to "sidebar", so Streamlit's own page
+# navigation (with the real Material icons set above) is back, alongside
+# the custom top bar rendered by render_topnav() inside each page.
+pg = st.navigation([home_page, demo_page, tech_page, docs_page])
 pg.run()
