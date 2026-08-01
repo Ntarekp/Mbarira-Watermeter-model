@@ -391,9 +391,15 @@ def letterbox(img, target):
     return canvas
 
 
-def pil_to_b64(img: Image.Image) -> str:
+def pil_to_b64(img: Image.Image, max_dim: int = 1000) -> str:
+    # Preview images don't need full camera resolution -- resizing before
+    # encoding is what actually removes the lag, since base64-encoding a
+    # multi-megapixel PNG is the slow part, not the model.
+    if max(img.size) > max_dim:
+        img = img.copy()
+        img.thumbnail((max_dim, max_dim), Image.LANCZOS)
     buf = io.BytesIO()
-    img.save(buf, format="PNG")
+    img.save(buf, format="JPEG", quality=85)
     return base64.b64encode(buf.getvalue()).decode("utf-8")
 
 
@@ -769,7 +775,7 @@ def render_demo():
                 b64_raw = pil_to_b64(raw_image_for_display)
                 with body_ph.container():
                     st.markdown(
-                        f'<div class="mb-preview-frame"><img src="data:image/png;base64,{b64_raw}"/>'
+                        f'<div class="mb-preview-frame"><img src="data:image/jpeg;base64,{b64_raw}"/>'
                         f'<div class="mb-scanline"></div></div>',
                         unsafe_allow_html=True,
                     )
@@ -780,12 +786,15 @@ def render_demo():
                 def _run_inference():
                     _infer_out["result"] = read_meter(raw_image_for_display, stage1_model, stage2_model)
 
+                MIN_VISIBLE_SECONDS = 1.4  # floor so the scan animation is actually seen
+
                 _thread = threading.Thread(target=_run_inference)
+                _t_start = time.time()
                 _thread.start()
 
                 pct = 0
-                while _thread.is_alive():
-                    pct = min(pct + random.randint(4, 11), 95)
+                while _thread.is_alive() or (time.time() - _t_start) < MIN_VISIBLE_SECONDS:
+                    pct = min(pct + random.randint(4, 9), 95)
                     header_ph.markdown(
                         f'<div class="mb-card-title">Image Preview {_badge("processing", pct)}</div>',
                         unsafe_allow_html=True,
@@ -832,7 +841,7 @@ def render_demo():
                         st.markdown('<p class="mb-label-caps">Full image</p>', unsafe_allow_html=True)
                         b64_full = pil_to_b64(result["annotated_full"])
                         st.markdown(
-                            f'<div class="mb-preview-frame mb-frame-half"><img src="data:image/png;base64,{b64_full}"/></div>',
+                            f'<div class="mb-preview-frame mb-frame-half"><img src="data:image/jpeg;base64,{b64_full}"/></div>',
                             unsafe_allow_html=True,
                         )
 
@@ -846,7 +855,7 @@ def render_demo():
                             crop_pil = Image.fromarray(annotated_crop[:, :, ::-1])
                             b64_crop = pil_to_b64(crop_pil)
                             st.markdown(
-                                f'<div class="mb-preview-frame mb-frame-half"><img src="data:image/png;base64,{b64_crop}"/></div>',
+                                f'<div class="mb-preview-frame mb-frame-half"><img src="data:image/jpeg;base64,{b64_crop}"/></div>',
                                 unsafe_allow_html=True,
                             )
                         if show_discarded and result["discarded_digits"]:
