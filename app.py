@@ -168,12 +168,16 @@ html, body,
 [data-testid="stFileUploaderDropzone"]:hover {{ border-color: {COLORS["accent"]} !important; }}
 
 .mb-preview-frame {{
-    position: relative; width: 100%; min-height: 320px;
+    position: relative; width: 100%; height: 380px;
     background: {COLORS["surface_container_low"]};
     border: 1px solid {COLORS["outline_variant"]}; border-radius: 10px;
     overflow: hidden; display: flex; align-items: center; justify-content: center;
 }}
-.mb-preview-frame img {{ width: 100%; height: auto; display: block; }}
+.mb-preview-frame.mb-frame-short {{ height: 220px; }}
+.mb-preview-frame img {{
+    max-width: 100%; max-height: 100%; width: auto; height: auto;
+    object-fit: contain; display: block; margin: 0 auto;
+}}
 .mb-preview-empty {{
     color: {COLORS["on_surface_variant"]}; font-size: 14px;
     text-align: center; padding: 32px;
@@ -201,8 +205,10 @@ html, body,
     border: 1px solid {COLORS["outline_variant"]}88; border-radius: 10px; padding: 16px;
 }}
 .mb-reading-box .value {{
-    font-family: 'JetBrains Mono', monospace; font-size: 30px; font-weight: 700;
-    letter-spacing: 0.12em; color: {COLORS["on_surface"]};
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    letter-spacing: 0.08em; color: {COLORS["on_surface"]};
+    font-size: clamp(18px, 3.4vw, 30px); word-break: break-all; line-height: 1.3;
+    display: inline-block; max-width: 100%;
 }}
 .mb-reading-box.warn {{ border-color: {COLORS["error"]}55; }}
 .mb-reading-box.warn .value {{ color: {COLORS["error"]}; }}
@@ -274,6 +280,9 @@ div[data-testid="stRadio"] input {{ display: none; }}
 .mb-pipeline-num {{
     font-family: 'JetBrains Mono', monospace; font-size: 11px;
     letter-spacing: 0.05em; color: {COLORS["outline"]}; margin-bottom: 4px;
+}}
+button[data-baseweb="tab"] {{
+    font-size: 13px !important;
 }}
 .mb-caveat {{
     background: {COLORS["surface_container_low"]};
@@ -682,6 +691,8 @@ def render_demo():
         st.session_state.result = None
     if "uploaded_key" not in st.session_state:
         st.session_state.uploaded_key = None
+    if "is_processing" not in st.session_state:
+        st.session_state.is_processing = False
 
     col_upload, col_preview, col_results = st.columns([4, 5, 3], gap="large")
 
@@ -710,6 +721,7 @@ def render_demo():
             if reset:
                 st.session_state.result = None
                 st.session_state.uploaded_key = None
+                st.session_state.is_processing = False
                 st.rerun()
 
     if picked_file is not None:
@@ -717,19 +729,23 @@ def render_demo():
         file_key = hashlib.md5(file_bytes).hexdigest()
         if file_key != st.session_state.uploaded_key:
             image = Image.open(picked_file)
+            st.session_state.is_processing = True
             with st.spinner("Analyzing meter..."):
                 st.session_state.result = read_meter(image, stage1_model, stage2_model)
+            st.session_state.is_processing = False
             st.session_state.uploaded_key = file_key
 
     result = st.session_state.result
 
     with col_preview:
         with st.container(border=True):
-            badge = (
-                '<span class="mb-badge"><span class="dot"></span>PROCESSING</span>'
-                if result is not None
-                else '<span class="mb-badge" style="opacity:0.5;">IDLE</span>'
-            )
+            is_processing = st.session_state.get("is_processing", False)
+            if is_processing:
+                badge = '<span class="mb-badge"><span class="dot"></span>PROCESSING</span>'
+            elif result is not None:
+                badge = '<span class="mb-badge" style="background:none;">&#10003; DONE</span>'
+            else:
+                badge = '<span class="mb-badge" style="opacity:0.5;">IDLE</span>'
             st.markdown(f'<div class="mb-card-title">Image Preview {badge}</div>', unsafe_allow_html=True)
 
             if result is None:
@@ -740,30 +756,40 @@ def render_demo():
                     unsafe_allow_html=True,
                 )
             else:
-                b64_full = pil_to_b64(result["annotated_full"])
-                st.markdown(
-                    f'<div class="mb-preview-frame"><img src="data:image/png;base64,{b64_full}"/>'
-                    f'<div class="mb-scanline"></div></div>',
-                    unsafe_allow_html=True,
-                )
-                if result["crop_canvas"] is not None:
-                    st.markdown('<p class="mb-label-caps" style="margin-top:14px;">Cropped digit window (deskewed)</p>', unsafe_allow_html=True)
-                    annotated_crop = draw_digit_boxes(
-                        result["crop_canvas"], result["kept_digits"], result["discarded_digits"],
-                        show_discarded=show_discarded,
-                    )
-                    crop_pil = Image.fromarray(annotated_crop[:, :, ::-1])
-                    b64_crop = pil_to_b64(crop_pil)
+                scanline = '<div class="mb-scanline"></div>' if is_processing else ''
+                has_crop = result["crop_canvas"] is not None
+
+                if has_crop:
+                    tab_full, tab_crop = st.tabs(["Full Image", "Cropped Digits"])
+                else:
+                    tab_full, = st.tabs(["Full Image"])
+
+                with tab_full:
+                    b64_full = pil_to_b64(result["annotated_full"])
                     st.markdown(
-                        f'<div class="mb-preview-frame" style="min-height:160px;">'
-                        f'<img src="data:image/png;base64,{b64_crop}"/></div>',
+                        f'<div class="mb-preview-frame"><img src="data:image/png;base64,{b64_full}"/>'
+                        f'{scanline}</div>',
                         unsafe_allow_html=True,
                     )
-                    if show_discarded and result["discarded_digits"]:
-                        st.caption(
-                            "Gray boxes = detections filtered out before the reading was built, with "
-                            "the reason each was dropped -- shown for debugging only, never counted."
+
+                if has_crop:
+                    with tab_crop:
+                        annotated_crop = draw_digit_boxes(
+                            result["crop_canvas"], result["kept_digits"], result["discarded_digits"],
+                            show_discarded=show_discarded,
                         )
+                        crop_pil = Image.fromarray(annotated_crop[:, :, ::-1])
+                        b64_crop = pil_to_b64(crop_pil)
+                        st.markdown(
+                            f'<div class="mb-preview-frame mb-frame-short">'
+                            f'<img src="data:image/png;base64,{b64_crop}"/>{scanline}</div>',
+                            unsafe_allow_html=True,
+                        )
+                        if show_discarded and result["discarded_digits"]:
+                            st.caption(
+                                "Gray boxes = detections filtered out before the reading was built, with "
+                                "the reason each was dropped -- shown for debugging only, never counted."
+                            )
 
     with col_results:
         with st.container(border=True):
