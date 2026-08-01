@@ -29,9 +29,6 @@ CROP_PAD_Y_FRAC = 0.15
 
 EXPECTED_DIGITS = None  # e.g. 8 -- purely a UI heads-up, never trims/pads the reading
 
-# ---------------------------------------------------------------------------
-# Shared design tokens + CSS (one copy, used by every page function below)
-# ---------------------------------------------------------------------------
 COLORS = {
     "primary": "#00543b",
     "primary_container": "#0b6e4f",
@@ -71,9 +68,52 @@ html, body,
     color: {COLORS["on_surface"]} !important;
 }}
 [data-testid="stHeader"] {{ background-color: transparent !important; }}
-[data-testid="stSidebar"] {{ background-color: {COLORS["surface_container_low"]} !important; }}
+[data-testid="stSidebarNav"] {{ display: none !important; }}
 .block-container {{ padding-top: 1.5rem; max-width: 1280px; }}
 #MainMenu, footer {{visibility: hidden;}}
+
+/* -- Top navbar: brand left, real page_link nav right, divider below -- */
+.mb-topnav {{
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+}}
+.mb-brand {{
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: {COLORS["on_surface"]} !important;
+    white-space: nowrap;
+}}
+.mb-navlink-active {{
+    font-size: 15px;
+    font-weight: 700;
+    color: {COLORS["primary"]} !important;
+    border-bottom: 2px solid {COLORS["primary"]};
+    padding-bottom: 4px;
+    display: inline-block;
+    white-space: nowrap;
+}}
+[data-testid="stPageLink"] {{ width: auto !important; }}
+[data-testid="stPageLink"] a {{
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 4px 2px !important;
+}}
+[data-testid="stPageLink"] p {{
+    font-size: 15px !important;
+    color: {COLORS["on_surface_variant"]} !important;
+    white-space: nowrap;
+}}
+[data-testid="stPageLink"]:hover p {{ color: {COLORS["primary"]} !important; }}
+.mb-navdivider {{
+    border: none;
+    border-top: 1px solid {COLORS["outline_variant"]}88;
+    margin: 8px 0 24px 0;
+}}
 
 .mb-header h1 {{
     font-family: 'Sora', sans-serif; font-size: 40px; line-height: 1.15;
@@ -237,12 +277,30 @@ def inject_css():
     st.markdown(BASE_CSS, unsafe_allow_html=True)
 
 
-# ---------------------------------------------------------------------------
-# Model loading + detection pipeline (used only by the Demo page, but
-# @st.cache_resource means it only loads once, and lazily -- Home/Technology/
-# Documentation never trigger it since st.navigation only runs the active
-# page's function).
-# ---------------------------------------------------------------------------
+def render_topnav(active):
+    """Brand on the left, real working page_link navigation clustered to
+    the right, divider line below -- matches the original single-page
+    navbar look, but every link is a genuine st.page_link (clicking it
+    actually navigates), and icons are Material Symbols, not emoji."""
+    nav_items = [
+        ("Home", home_page, ":material/home:"),
+        ("Demo", demo_page, ":material/science:"),
+        ("Technology", tech_page, ":material/memory:"),
+        ("Documentation", docs_page, ":material/description:"),
+    ]
+    cols = st.columns([2, 3, 1, 1, 1, 1])
+    with cols[0]:
+        st.markdown('<span class="mb-brand">Mbarira AI</span>', unsafe_allow_html=True)
+    # cols[1] is an empty spacer, pushing the links toward the right edge
+    for col, (label, page, icon) in zip(cols[2:], nav_items):
+        with col:
+            if active == label:
+                st.markdown(f'<span class="mb-navlink-active">{label}</span>', unsafe_allow_html=True)
+            else:
+                st.page_link(page, label=label, icon=icon)
+    st.markdown('<hr class="mb-navdivider">', unsafe_allow_html=True)
+
+
 @st.cache_resource
 def load_models():
     if not STAGE1_PATH.exists() or not STAGE2_PATH.exists():
@@ -275,10 +333,6 @@ def find_window_obb(result):
 
 
 def deskew_window(img, poly, pad_x_digits=CROP_PAD_X_DIGITS, pad_y_frac=CROP_PAD_Y_FRAC):
-    """Rotates the full image using the window's own detected angle
-    (via minAreaRect) so the digit row becomes horizontal, then crops --
-    instead of naively cropping a tilted region, which wastes resolution
-    and can scramble left-to-right reading order."""
     rect = cv2.minAreaRect(poly.astype(np.float32))
     (cx, cy), (w, h), angle = rect
 
@@ -349,13 +403,6 @@ def _cluster_rows(y_vals, median_h, gap_frac=ROW_GAP_FRAC):
 
 
 def clean_digit_detections(xyxyxyxy, cls_ids, confs):
-    """Returns (kept, discarded). `kept` becomes the reading; `discarded`
-    is kept only so the UI can optionally show what was filtered and why.
-    Groups detections into rows by y-position (supports a genuine second
-    row, e.g. a red sub-counter dial), drops duplicate boxes competing for
-    the same physical slot by confidence, then sorts left-to-right within
-    each row. No fixed digit count anywhere -- genuine repeats like "00"
-    pass straight through untouched."""
     if len(cls_ids) == 0:
         return [], []
 
@@ -397,10 +444,6 @@ def clean_digit_detections(xyxyxyxy, cls_ids, confs):
 
 
 def draw_digit_boxes(canvas_bgr, kept, discarded, show_discarded=False):
-    """Draws ONLY the boxes that made it into the final reading (green),
-    so the box count always matches the reading length. If show_discarded
-    is on, filtered boxes also appear in gray with the reason -- never
-    shown by default."""
     img = canvas_bgr.copy()
 
     if show_discarded:
@@ -506,13 +549,10 @@ def read_meter(image, stage1_model, stage2_model):
     }
 
 
-# ===========================================================================
-# Page functions -- each is passed to st.Page below. st.navigation only
-# executes the active one, so Home/Technology/Documentation never touch
-# the models.
-# ===========================================================================
 def render_home():
     inject_css()
+    render_topnav("Home")
+
     st.markdown(
         """
         <div class="mb-hero">
@@ -590,6 +630,8 @@ def render_home():
 
 def render_demo():
     inject_css()
+    render_topnav("Demo")
+
     st.markdown(
         """
         <div class="mb-header">
@@ -783,6 +825,8 @@ def render_demo():
 
 def render_technology():
     inject_css()
+    render_topnav("Technology")
+
     st.markdown(
         """
         <div class="mb-header">
@@ -907,6 +951,8 @@ def render_technology():
 
 def render_documentation():
     inject_css()
+    render_topnav("Documentation")
+
     st.markdown(
         """
         <div class="mb-header">
@@ -1042,9 +1088,6 @@ def render_documentation():
     )
 
 
-# ===========================================================================
-# Entrypoint: real navigation with Material icons (no emoji, no custom navbar)
-# ===========================================================================
 st.set_page_config(page_title="Mbarira AI - Water Meter Reading", page_icon=":material/water_drop:", layout="wide")
 
 home_page = st.Page(render_home, title="Home", icon=":material/home:", default=True)
@@ -1052,5 +1095,7 @@ demo_page = st.Page(render_demo, title="Demo", icon=":material/science:")
 tech_page = st.Page(render_technology, title="Technology", icon=":material/memory:")
 docs_page = st.Page(render_documentation, title="Documentation", icon=":material/description:")
 
-pg = st.navigation([home_page, demo_page, tech_page, docs_page])
+# position="hidden" turns off Streamlit's automatic sidebar page list --
+# navigation now happens entirely through the custom top bar (render_topnav)
+pg = st.navigation([home_page, demo_page, tech_page, docs_page], position="hidden")
 pg.run()
