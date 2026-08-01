@@ -1219,7 +1219,12 @@ def render_documentation():
         unsafe_allow_html=True,
     )
 
-st.set_page_config(page_title="Mbarira AI - Water Meter Reading", page_icon=":material/water_drop:", layout="wide")
+st.set_page_config(
+    page_title="Mbarira AI - Water Meter Reading",
+    page_icon=":material/water_drop:",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
 
 home_page = st.Page(render_home, title="Home", icon=":material/home:", default=True)
 demo_page = st.Page(render_demo, title="Demo", icon=":material/science:")
