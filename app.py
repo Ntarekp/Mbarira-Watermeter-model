@@ -559,6 +559,52 @@ def read_meter(image, stage1_model, stage2_model):
     }
 
 
+import urllib.parse
+
+
+def render_feedback_section():
+    issue_title = "Feedback / Bug report"
+    issue_body = "Describe what you saw and, if relevant, attach the photo you tested with.\n\n---\nApp: Mbarira AI water meter reader"
+    issue_url = "https://github.com/Ntarekp/Mbarira-Watermeter-model/issues/new?" + urllib.parse.urlencode(
+        {"title": issue_title, "body": issue_body}
+    )
+    discuss_url = "https://github.com/Ntarekp/Mbarira-Watermeter-model/discussions"
+
+    with st.container(border=True):
+        st.markdown('<div class="mb-card-title">Feedback &amp; Community</div>', unsafe_allow_html=True)
+        st.markdown(
+            "Spotted a bad reading, a bug, or have an idea? Every report helps improve the model."
+        )
+        col_a, col_b = st.columns(2)
+        with col_a:
+            st.link_button("Report an issue", issue_url, use_container_width=True)
+        with col_b:
+            st.link_button("Join the discussion", discuss_url, use_container_width=True)
+
+
+import urllib.parse
+
+
+def render_feedback_section():
+    issue_title = "Feedback / Bug report"
+    issue_body = "Describe what you saw and, if relevant, attach the photo you tested with.\n\n---\nApp: Mbarira AI water meter reader"
+    issue_url = "https://github.com/Ntarekp/Mbarira-Watermeter-model/issues/new?" + urllib.parse.urlencode(
+        {"title": issue_title, "body": issue_body}
+    )
+    discuss_url = "https://github.com/Ntarekp/Mbarira-Watermeter-model/discussions"
+
+    with st.container(border=True):
+        st.markdown('<div class="mb-card-title">Feedback &amp; Community</div>', unsafe_allow_html=True)
+        st.markdown(
+            "Spotted a bad reading, a bug, or have an idea? Every report helps improve the model."
+        )
+        col_a, col_b = st.columns(2)
+        with col_a:
+            st.link_button("Report an issue", issue_url, use_container_width=True)
+        with col_b:
+            st.link_button("Join the discussion", discuss_url, use_container_width=True)
+
+
 def render_home():
     inject_css()
     render_topnav("Home")
@@ -1090,6 +1136,10 @@ def render_documentation():
                 "Stage 2 improves digit recall by +9 pts on average over Stage 1, but the `u` class "
                 "regresses -- likely crop clipping or augmentation effects on this rare class."
             )
+
+    render_feedback_section()
+
+    render_feedback_section()
 
     st.markdown(
         '<div class="mb-footer">Mbarira AI Research Lab &middot; Precision computer vision for '
