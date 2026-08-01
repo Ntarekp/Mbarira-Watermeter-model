@@ -758,7 +758,8 @@ def render_demo():
                 b64_raw = pil_to_b64(raw_image_for_display)
                 with body_ph.container():
                     st.markdown(
-                        f'<div class="mb-preview-frame"><img src="data:image/png;base64,{b64_raw}"/></div>',
+                        f'<div class="mb-preview-frame"><img src="data:image/png;base64,{b64_raw}"/>'
+                        f'<div class="mb-scanline"></div></div>',
                         unsafe_allow_html=True,
                     )
 
