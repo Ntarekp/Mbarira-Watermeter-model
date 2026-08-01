@@ -174,6 +174,7 @@ html, body,
     overflow: hidden; display: flex; align-items: center; justify-content: center;
 }}
 .mb-preview-frame.mb-frame-short {{ height: 220px; }}
+.mb-preview-frame.mb-frame-half {{ height: 300px; }}
 .mb-preview-frame img {{
     max-width: 100%; max-height: 100%; width: auto; height: auto;
     object-fit: contain; display: block; margin: 0 auto;
@@ -724,67 +725,93 @@ def render_demo():
                 st.session_state.is_processing = False
                 st.rerun()
 
+    new_file_pending = False
+    raw_image_for_display = None
     if picked_file is not None:
         file_bytes = picked_file.getvalue()
         file_key = hashlib.md5(file_bytes).hexdigest()
         if file_key != st.session_state.uploaded_key:
-            image = Image.open(picked_file)
-            st.session_state.is_processing = True
-            with st.spinner("Analyzing meter..."):
-                st.session_state.result = read_meter(image, stage1_model, stage2_model)
-            st.session_state.is_processing = False
-            st.session_state.uploaded_key = file_key
+            new_file_pending = True
+            raw_image_for_display = Image.open(picked_file)
 
     result = st.session_state.result
 
     with col_preview:
         with st.container(border=True):
-            is_processing = st.session_state.get("is_processing", False)
-            if is_processing:
-                badge = '<span class="mb-badge"><span class="dot"></span>PROCESSING</span>'
-            elif result is not None:
-                badge = '<span class="mb-badge" style="background:none;">&#10003; DONE</span>'
-            else:
-                badge = '<span class="mb-badge" style="opacity:0.5;">IDLE</span>'
-            st.markdown(f'<div class="mb-card-title">Image Preview {badge}</div>', unsafe_allow_html=True)
+            header_ph = st.empty()
+            body_ph = st.empty()
 
-            if result is None:
-                st.markdown(
-                    '<div class="mb-preview-frame"><p class="mb-preview-empty">'
-                    'Upload a photo to get started. For best results, photograph the digit window '
-                    'straight-on, in good lighting, filling as much of the frame as possible.</p></div>',
+            def _badge(state):
+                if state == "processing":
+                    return '<span class="mb-badge"><span class="dot"></span>READING DIGITS...</span>'
+                if state == "done":
+                    return '<span class="mb-badge" style="background:none;">&#10003; DONE</span>'
+                return '<span class="mb-badge" style="opacity:0.5;">IDLE</span>'
+
+            if new_file_pending and raw_image_for_display is not None:
+                # Show the actual uploaded photo immediately -- no loader graphic,
+                # the real image itself is the "processing" state.
+                header_ph.markdown(
+                    f'<div class="mb-card-title">Image Preview {_badge("processing")}</div>',
                     unsafe_allow_html=True,
                 )
-            else:
-                scanline = '<div class="mb-scanline"></div>' if is_processing else ''
-                has_crop = result["crop_canvas"] is not None
-
-                if has_crop:
-                    tab_full, tab_crop = st.tabs(["Full Image", "Cropped Digits"])
-                else:
-                    tab_full, = st.tabs(["Full Image"])
-
-                with tab_full:
-                    b64_full = pil_to_b64(result["annotated_full"])
+                b64_raw = pil_to_b64(raw_image_for_display)
+                with body_ph.container():
                     st.markdown(
-                        f'<div class="mb-preview-frame"><img src="data:image/png;base64,{b64_full}"/>'
-                        f'{scanline}</div>',
+                        f'<div class="mb-preview-frame"><img src="data:image/png;base64,{b64_raw}"/></div>',
                         unsafe_allow_html=True,
                     )
 
-                if has_crop:
-                    with tab_crop:
-                        annotated_crop = draw_digit_boxes(
-                            result["crop_canvas"], result["kept_digits"], result["discarded_digits"],
-                            show_discarded=show_discarded,
-                        )
-                        crop_pil = Image.fromarray(annotated_crop[:, :, ::-1])
-                        b64_crop = pil_to_b64(crop_pil)
+                st.session_state.result = read_meter(raw_image_for_display, stage1_model, stage2_model)
+                st.session_state.uploaded_key = file_key
+                result = st.session_state.result
+
+            if result is None:
+                header_ph.markdown(
+                    f'<div class="mb-card-title">Image Preview {_badge("idle")}</div>',
+                    unsafe_allow_html=True,
+                )
+                with body_ph.container():
+                    st.markdown(
+                        '<div class="mb-preview-frame"><p class="mb-preview-empty">'
+                        'Upload a photo to get started. For best results, photograph the digit window '
+                        'straight-on, in good lighting, filling as much of the frame as possible.</p></div>',
+                        unsafe_allow_html=True,
+                    )
+            else:
+                header_ph.markdown(
+                    f'<div class="mb-card-title">Image Preview {_badge("done")}</div>',
+                    unsafe_allow_html=True,
+                )
+                has_crop = result["crop_canvas"] is not None
+
+                with body_ph.container():
+                    if has_crop:
+                        pic_col1, pic_col2 = st.columns(2)
+                    else:
+                        pic_col1, pic_col2 = st.container(), None
+
+                    with pic_col1:
+                        st.markdown('<p class="mb-label-caps">Full image</p>', unsafe_allow_html=True)
+                        b64_full = pil_to_b64(result["annotated_full"])
                         st.markdown(
-                            f'<div class="mb-preview-frame mb-frame-short">'
-                            f'<img src="data:image/png;base64,{b64_crop}"/>{scanline}</div>',
+                            f'<div class="mb-preview-frame mb-frame-half"><img src="data:image/png;base64,{b64_full}"/></div>',
                             unsafe_allow_html=True,
                         )
+
+                    if has_crop:
+                        with pic_col2:
+                            st.markdown('<p class="mb-label-caps">Cropped digits</p>', unsafe_allow_html=True)
+                            annotated_crop = draw_digit_boxes(
+                                result["crop_canvas"], result["kept_digits"], result["discarded_digits"],
+                                show_discarded=show_discarded,
+                            )
+                            crop_pil = Image.fromarray(annotated_crop[:, :, ::-1])
+                            b64_crop = pil_to_b64(crop_pil)
+                            st.markdown(
+                                f'<div class="mb-preview-frame mb-frame-half"><img src="data:image/png;base64,{b64_crop}"/></div>',
+                                unsafe_allow_html=True,
+                            )
                         if show_discarded and result["discarded_digits"]:
                             st.caption(
                                 "Gray boxes = detections filtered out before the reading was built, with "
