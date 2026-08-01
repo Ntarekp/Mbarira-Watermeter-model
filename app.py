@@ -392,15 +392,32 @@ def letterbox(img, target):
 
 
 def pil_to_b64(img: Image.Image, max_dim: int = 1000) -> str:
-    # Preview images don't need full camera resolution -- resizing before
-    # encoding is what actually removes the lag, since base64-encoding a
-    # multi-megapixel PNG is the slow part, not the model.
-    if max(img.size) > max_dim:
+    """Encode a PIL image as a base64 JPEG for inline HTML preview.
+
+    JPEG has no alpha channel, so RGBA/P/LA images MUST be converted to
+    RGB first or Pillow raises OSError on save -- this was the root cause
+    of the Streamlit Cloud crash (uploaded PNGs are commonly RGBA or
+    palette-mode). Any other encoding failure falls back to a tiny gray
+    placeholder so one bad image can never take down the whole page.
+    """
+    try:
         img = img.copy()
-        img.thumbnail((max_dim, max_dim), Image.LANCZOS)
-    buf = io.BytesIO()
-    img.save(buf, format="JPEG", quality=85)
-    return base64.b64encode(buf.getvalue()).decode("utf-8")
+        if img.mode not in ("RGB", "L"):
+            img = img.convert("RGB")
+        if max(img.size) > max_dim:
+            img.thumbnail((max_dim, max_dim), Image.LANCZOS)
+        buf = io.BytesIO()
+        img.save(buf, format="JPEG", quality=85)
+        return base64.b64encode(buf.getvalue()).decode("utf-8")
+    except Exception as e:
+        # Defensive fallback: never let a preview-encoding failure crash
+        # the page. Log to console (visible in Streamlit Cloud logs) and
+        # return a minimal placeholder image instead.
+        print(f"[pil_to_b64] encoding failed: {e}")
+        placeholder = Image.new("RGB", (400, 300), (230, 230, 230))
+        buf = io.BytesIO()
+        placeholder.save(buf, format="JPEG", quality=70)
+        return base64.b64encode(buf.getvalue()).decode("utf-8")
 
 
 def _box_geometry(pts):
@@ -694,7 +711,15 @@ def render_demo():
     st.write("")
 
     with st.spinner("Loading models..."):
-        stage1_model, stage2_model = load_models()
+        try:
+            stage1_model, stage2_model = load_models()
+        except Exception as e:
+            st.error(
+                "The detection models failed to load. This has been logged for review -- "
+                "please try refreshing the page in a few minutes."
+            )
+            print(f"[render_demo] load_models failed: {e}")
+            st.stop()
 
     if "result" not in st.session_state:
         st.session_state.result = None
@@ -747,8 +772,17 @@ def render_demo():
         file_bytes = picked_file.getvalue()
         file_key = hashlib.md5(file_bytes).hexdigest()
         if file_key != st.session_state.uploaded_key:
-            new_file_pending = True
-            raw_image_for_display = Image.open(picked_file)
+            try:
+                raw_image_for_display = Image.open(picked_file)
+                raw_image_for_display.load()  # force-decode now, surface errors here not later
+                new_file_pending = True
+            except Exception as e:
+                st.error(
+                    "Couldn't open that image -- it may be corrupted or in an unsupported "
+                    "format. Please try a different JPG or PNG."
+                )
+                print(f"[render_demo] Image.open failed for uploaded file: {e}")
+                st.session_state.uploaded_key = file_key  # don't retry the same bad file every rerun
 
     result = st.session_state.result
 
@@ -781,10 +815,15 @@ def render_demo():
                     )
 
                 # Run inference in a background thread so we can poll real progress
-                # instead of freezing the UI on one blocking call.
-                _infer_out = {}
+                # instead of freezing the UI on one blocking call. Any exception
+                # inside read_meter() is captured here rather than crashing the
+                # thread silently or propagating an unhandled error into join().
+                _infer_out = {"result": None, "error": None}
                 def _run_inference():
-                    _infer_out["result"] = read_meter(raw_image_for_display, stage1_model, stage2_model)
+                    try:
+                        _infer_out["result"] = read_meter(raw_image_for_display, stage1_model, stage2_model)
+                    except Exception as e:
+                        _infer_out["error"] = e
 
                 MIN_VISIBLE_SECONDS = 1.4  # floor so the scan animation is actually seen
 
@@ -802,15 +841,30 @@ def render_demo():
                     time.sleep(0.12)
                 _thread.join()
 
-                header_ph.markdown(
-                    f'<div class="mb-card-title">Image Preview {_badge("processing", 100)}</div>',
-                    unsafe_allow_html=True,
-                )
-                time.sleep(0.15)
+                if _infer_out["error"] is not None:
+                    print(f"[render_demo] read_meter failed: {_infer_out['error']}")
+                    header_ph.markdown(
+                        f'<div class="mb-card-title">Image Preview '
+                        f'<span class="mb-badge" style="background:none;color:#ba1a1a;">&#9888; ERROR</span></div>',
+                        unsafe_allow_html=True,
+                    )
+                    st.error(
+                        "Something went wrong while analyzing this image. This has been logged -- "
+                        "please try a different photo, or use the feedback link on the Documentation page."
+                    )
+                    st.session_state.result = None
+                    st.session_state.uploaded_key = file_key
+                    result = None
+                else:
+                    header_ph.markdown(
+                        f'<div class="mb-card-title">Image Preview {_badge("processing", 100)}</div>',
+                        unsafe_allow_html=True,
+                    )
+                    time.sleep(0.15)
 
-                st.session_state.result = _infer_out["result"]
-                st.session_state.uploaded_key = file_key
-                result = st.session_state.result
+                    st.session_state.result = _infer_out["result"]
+                    st.session_state.uploaded_key = file_key
+                    result = st.session_state.result
 
             if result is None:
                 header_ph.markdown(
