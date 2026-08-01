@@ -3,6 +3,8 @@ import urllib.parse
 import hashlib
 import io
 import time
+import threading
+import random
 from pathlib import Path
 
 import cv2
@@ -694,6 +696,8 @@ def render_demo():
         st.session_state.uploaded_key = None
     if "is_processing" not in st.session_state:
         st.session_state.is_processing = False
+    if "upload_session" not in st.session_state:
+        st.session_state.upload_session = 0
 
     col_upload, col_preview, col_results = st.columns([4, 5, 3], gap="large")
 
@@ -706,23 +710,29 @@ def render_demo():
                 horizontal=True, label_visibility="collapsed", key="input_mode",
             )
 
+            session_id = st.session_state.upload_session
             picked_file = None
             if input_mode == "Upload photo":
                 picked_file = st.file_uploader(
                     "Drag & drop image here", type=["jpg", "jpeg", "png"], label_visibility="collapsed",
+                    key=f"file_uploader_{session_id}",
                 )
                 st.caption("Supports JPG, PNG (Max 5MB)")
             else:
-                picked_file = st.camera_input("Take a photo of the meter", label_visibility="collapsed")
+                picked_file = st.camera_input(
+                    "Take a photo of the meter", label_visibility="collapsed",
+                    key=f"camera_input_{session_id}",
+                )
                 st.caption("On phones this opens your camera directly -- hold the meter's digit window steady and well-lit.")
 
             show_discarded = st.checkbox("Show filtered-out detections (debug)", value=False)
 
-            reset = st.button("Analyze another", use_container_width=True)
+            reset = st.button("Analyze Another Image", use_container_width=True)
             if reset:
                 st.session_state.result = None
                 st.session_state.uploaded_key = None
                 st.session_state.is_processing = False
+                st.session_state.upload_session += 1  # forces fresh uploader/camera widgets
                 st.rerun()
 
     new_file_pending = False
@@ -741,9 +751,10 @@ def render_demo():
             header_ph = st.empty()
             body_ph = st.empty()
 
-            def _badge(state):
+            def _badge(state, pct=None):
                 if state == "processing":
-                    return '<span class="mb-badge"><span class="dot"></span>READING DIGITS...</span>'
+                    pct_txt = f" {pct}%" if pct is not None else ""
+                    return f'<span class="mb-badge"><span class="dot"></span>READING DIGITS...{pct_txt}</span>'
                 if state == "done":
                     return '<span class="mb-badge" style="background:none;">&#10003; DONE</span>'
                 return '<span class="mb-badge" style="opacity:0.5;">IDLE</span>'
@@ -763,7 +774,32 @@ def render_demo():
                         unsafe_allow_html=True,
                     )
 
-                st.session_state.result = read_meter(raw_image_for_display, stage1_model, stage2_model)
+                # Run inference in a background thread so we can poll real progress
+                # instead of freezing the UI on one blocking call.
+                _infer_out = {}
+                def _run_inference():
+                    _infer_out["result"] = read_meter(raw_image_for_display, stage1_model, stage2_model)
+
+                _thread = threading.Thread(target=_run_inference)
+                _thread.start()
+
+                pct = 0
+                while _thread.is_alive():
+                    pct = min(pct + random.randint(4, 11), 95)
+                    header_ph.markdown(
+                        f'<div class="mb-card-title">Image Preview {_badge("processing", pct)}</div>',
+                        unsafe_allow_html=True,
+                    )
+                    time.sleep(0.12)
+                _thread.join()
+
+                header_ph.markdown(
+                    f'<div class="mb-card-title">Image Preview {_badge("processing", 100)}</div>',
+                    unsafe_allow_html=True,
+                )
+                time.sleep(0.15)
+
+                st.session_state.result = _infer_out["result"]
                 st.session_state.uploaded_key = file_key
                 result = st.session_state.result
 
