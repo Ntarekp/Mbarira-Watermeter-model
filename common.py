@@ -43,22 +43,34 @@ html, body,
 .block-container {{ padding-top: 1.5rem; max-width: 1280px; }}
 #MainMenu, footer {{visibility: hidden;}}
 
-.mb-navbar {{
-    display: flex; align-items: center; gap: 20px;
-    padding: 12px 4px 4px 4px; margin-bottom: 4px;
+.mb-navlinks {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid {COLORS["outline_variant"]}55;
+    margin-bottom: 24px;
+    padding: 14px 4px;
 }}
-.mb-navbar .brand {{
-    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px;
+.mb-navlinks .brand-mark {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}}
+.mb-navlinks .brand {{
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
     color: {COLORS["on_surface"]} !important;
 }}
-.mb-navbar .current {{
+.mb-navlinks .current {{
     font-size: 15px; font-weight: 700; color: {COLORS["primary"]} !important;
-    border-bottom: 2px solid {COLORS["primary"]}; padding-bottom: 4px;
 }}
-.mb-navlinks {{
-    border-bottom: 1px solid {COLORS["outline_variant"]}55;
-    margin-bottom: 24px; padding-bottom: 4px;
+[data-testid="stHorizontalBlock"]:has(.brand-mark) {{
+    align-items: center !important;
 }}
+[data-testid="stSidebarNav"] {{ display: none; }}
+[data-testid="stPageLink"] a {{ justify-content: flex-end; }}
+[data-testid="stPageLink"] p {{ text-align: right; }}
 [data-testid="stPageLink"] {{ width: auto !important; }}
 [data-testid="stPageLink"] a {{
     text-decoration: none !important; background: transparent !important;
@@ -197,7 +209,6 @@ div[data-testid="stRadio"] label:has(input:checked) {{
 }}
 div[data-testid="stRadio"] input {{ display: none; }}
 
-/* -- Home / Technology page additions -- */
 .mb-hero {{
     text-align: center; max-width: 720px; margin: 0 auto 40px auto; padding-top: 24px;
 }}
@@ -233,22 +244,37 @@ def inject_css():
     st.markdown(BASE_CSS, unsafe_allow_html=True)
 
 
+BRAND_MARK_SVG = """
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2.5C12 2.5 5 11.2 5 15.5C5 19.5 8.13 22.5 12 22.5C15.87 22.5 19 19.5 19 15.5C19 11.2 12 2.5 12 2.5Z"
+      fill="#0b6e4f" stroke="#00543b" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M9.2 15.8C9.2 17.5 10.5 18.8 12 18.8" stroke="#98edc6" stroke-width="1.4"
+      stroke-linecap="round" fill="none"/>
+</svg>
+"""
+
+
 def render_navbar(active="Home"):
-    """Real navigation across all four pages. The current page renders as
-    plain text (not a link) -- everything else is a genuine st.page_link."""
-    st.markdown('<div class="mb-navbar"><span class="brand">Mbarira AI</span></div>', unsafe_allow_html=True)
+    """Single row: brand mark + wordmark on the left, real navigation
+    (st.page_link, no icons) right-aligned on the same line. The current
+    page renders as plain text instead of a link."""
     st.markdown('<div class="mb-navlinks">', unsafe_allow_html=True)
+    cols = st.columns([5, 1, 1, 1, 1.3])
+    with cols[0]:
+        st.markdown(
+            f'<div class="brand-mark">{BRAND_MARK_SVG}<span class="brand">Mbarira AI</span></div>',
+            unsafe_allow_html=True,
+        )
     pages = [
-        ("Home", "app.py", "\U0001F3E0"),
-        ("Demo", "pages/1_\U0001F52C_Demo.py", "\U0001F52C"),
-        ("Technology", "pages/2_\u2699\uFE0F_Technology.py", "\u2699\uFE0F"),
-        ("Documentation", "pages/3_\U0001F4C4_Documentation.py", "\U0001F4C4"),
+        ("Home", "app.py"),
+        ("Demo", "pages/1_\U0001F52C_Demo.py"),
+        ("Technology", "pages/2_\u2699\uFE0F_Technology.py"),
+        ("Documentation", "pages/3_\U0001F4C4_Documentation.py"),
     ]
-    cols = st.columns([1, 1, 1, 1, 6])
-    for i, (label, path, icon) in enumerate(pages):
+    for i, (label, path) in enumerate(pages, start=1):
         with cols[i]:
             if active == label:
-                st.markdown(f'<span class="current">{label}</span>', unsafe_allow_html=True)
+                st.markdown(f'<div style="text-align:right;"><span class="current">{label}</span></div>', unsafe_allow_html=True)
             else:
-                st.page_link(path, label=label, icon=icon)
+                st.page_link(path, label=label)
     st.markdown('</div>', unsafe_allow_html=True)

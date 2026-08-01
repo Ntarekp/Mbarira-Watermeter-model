@@ -1,7 +1,7 @@
 import streamlit as st
 from common import inject_css, render_navbar
 
-st.set_page_config(page_title="Mbarira AI - Water Meter Reading", page_icon="\U0001F4A7", layout="wide")
+st.set_page_config(page_title="Mbarira AI - Water Meter Reading", page_icon="\U0001F4A7", layout="wide", initial_sidebar_state="collapsed")
 inject_css()
 render_navbar("Home")
 

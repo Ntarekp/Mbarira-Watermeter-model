@@ -15,7 +15,7 @@ from ultralytics import YOLO
 sys.path.append(str(Path(__file__).parent.parent))
 from common import inject_css, render_navbar, COLORS
 
-st.set_page_config(page_title="Mbarira AI - Water Meter Reading", page_icon="\U0001F4A7", layout="wide")
+st.set_page_config(page_title="Mbarira AI - Water Meter Reading", page_icon="\U0001F4A7", layout="wide", initial_sidebar_state="collapsed")
 inject_css()
 
 APP_DIR = Path(__file__).parent.parent

@@ -7,7 +7,7 @@ import streamlit as st
 sys.path.append(str(Path(__file__).parent.parent))
 from common import inject_css, render_navbar
 
-st.set_page_config(page_title="Mbarira AI - Technology", page_icon="\u2699\uFE0F", layout="wide")
+st.set_page_config(page_title="Mbarira AI - Technology", page_icon="\u2699\uFE0F", layout="wide", initial_sidebar_state="collapsed")
 inject_css()
 render_navbar("Technology")
 
