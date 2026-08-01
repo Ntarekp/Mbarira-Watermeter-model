@@ -9,6 +9,7 @@ A two-stage YOLOv8-OBB (oriented bounding box) computer vision pipeline that det
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![YOLOv8](https://img.shields.io/badge/model-YOLOv8--OBB-orange)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-blueviolet)
 
 ### 🔗 [**Try the live app →**](https://mbarira-watermeter-mode-k83rnsir2syc2twbpm3fts.streamlit.app/)
 
@@ -107,15 +108,21 @@ Full per-class tables are on the [Documentation page](https://mbarira-watermeter
 
 ## 🗂️ Project Structure
 
+```
 Mbarira-Watermeter-model/
-├── app.py # Full Streamlit app: Home, Demo, Technology, Documentation
+├── app.py                  # Full Streamlit app: Home, Demo, Technology, Documentation
 ├── requirements.txt
+├── README.md
 ├── .streamlit/
-│ └── config.toml # Theme
+│   └── config.toml         # Theme
+├── notebooks/
+│   └── train_colab.ipynb   # Training / experimentation notebook
+├── scripts/
+│   └── push_readme.py      # This script, as a standalone file
 └── models/
-├── meter_detector.pt # Stage 1 -- meter + digit window (OBB)
-└── digit_detector.pt # Stage 2 -- individual digits (OBB)
-
+    ├── meter_detector.pt   # Stage 1 -- meter + digit window (OBB)
+    └── digit_detector.pt   # Stage 2 -- individual digits (OBB)
+```
 
 ## ⚙️ Tech Stack
 
@@ -154,7 +161,12 @@ The app expects the two trained weight files at `models/meter_detector.pt` and `
 
 ## 🤝 Contributing
 
-Issues and pull requests are welcome. If you're reporting a misread, including the original photo and the app's debug view (toggle "Show filtered-out detections") helps a lot in diagnosing whether it's a detection, filtering, or classification issue.
+This project is open source and contributions are genuinely welcome — commenting on issues, filing bug reports, or opening pull requests all help.
+
+- **Reporting a misread?** Include the original photo and the app's debug view (toggle "Show filtered-out detections") — that combination is the fastest way to tell whether it's a detection, filtering, or classification issue.
+- **Fixing a bug or adding a feature?** Fork the repo, create a branch, and open a PR against `main` with a short description of what changed and why.
+- **Improving the dataset?** New, well-labeled meter images (especially unusual brands/lighting conditions) are one of the highest-leverage contributions right now.
+- **Discussing an idea first?** Open an issue before a large PR so the approach can be agreed on early.
 
 ## 📄 License
 
